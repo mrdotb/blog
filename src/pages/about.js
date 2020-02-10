@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import groupBy from 'lodash.groupby'
@@ -14,9 +14,15 @@ import Ansible from '../../content/assets/ansible.inline.svg'
 import Ava from '../../content/assets/ava.inline.svg'
 import Cmd from '../../content/assets/cmd-line.inline.svg'
 import Docker from '../../content/assets/docker.inline.svg'
+import Gatsby from '../../content/assets/gatsby.inline.svg'
+import Git from '../../content/assets/git.inline.svg'
+import Graphql from '../../content/assets/graphql.inline.svg'
 import Pg from '../../content/assets/postgresql.inline.svg'
+import Pug from '../../content/assets/pug.inline.svg'
 import Phoenix from '../../content/assets/phoenix.inline.svg'
 import Reakt from '../../content/assets/react.inline.svg'
+import Redux from '../../content/assets/redux.inline.svg'
+import Ruby from '../../content/assets/ruby.inline.svg'
 import Nodejs from '../../content/assets/nodejs.inline.svg'
 import Ubuntu from '../../content/assets/ubuntu.inline.svg'
 import Vim from '../../content/assets/vim.inline.svg'
@@ -50,66 +56,117 @@ const Text = styled.div`
   font-size: ${scale(-1 / 5).fontSize};
   line-height: ${scale(-1 / 5).lineHeight};
 `
-
 const XpContent = styled(Content)`
   padding: ${rhythm(2)} ${rhythm(0.5)};
   flex-direction: column;
 `
-const CardsContainer = styled(Container)`
+const CardsContainer = styled.div`
+  display: flex;
   flex-direction: column;
 `
 const Year = styled.div`
   align-self: center;
   font-size: ${scale(1.2).fontSize};
   line-height: ${scale(1.2).lineHeight};
+  margin: 0 0 ${rhythm(1)} 0;
 `
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${rhythm(26)};
-  min-height: 300px;
+  max-width: ${rhythm(26)};
+  width: 100%;
+  margin: 0 0 ${rhythm(2)} 0;
   border-radius: 6px;
   box-shadow: 0px 5px 30px rgba(0,0,0,0.15);
+  background-color: rgba(252,253,255,1.00);
+${props => props.right &&
+  css`
+  align-self: flex-end;
+  `
+}
 `
 const CardImage = styled.div`
   width: 100%;
 `
-const CardContent = styled.div``
-const CardTitle = styled.div``
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: ${rhythm(1)};
+`
+const CardHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 ${rhythm(0.5)} 0;
+`
+const CardCat = styled.header`
+  text-transform: uppercase;
+  color: rgba(136,136,136,1.00);
+`
+const CardLink = styled.a`
+  color: rgba(136,136,136,1.00);
+  text-decoration: underline;
+`
+const CardMain = styled.main`
+  display: flex;
+  max-width: ${rhythm(20)};
+  flex-direction: column;
+  padding: 0 0 ${rhythm(0.5)} 0;
+`
+const CardDescription = styled.h3`
+  margin-bottom: 0;
+`
+const CardTime = styled.div`
+  color: rgba(136,136,136,1.00);
+`
+const CardFooter = styled.footer`
+  max-width: ${rhythm(20)};
+  align-self: flex-end;
+  text-align: left;
+`
 const Experiences = ({data}) => {
+  let placement = 0
   const groupByYear = groupBy(data, e => e.node.frontmatter.year)
   const years = Object.keys(groupByYear).sort()
+  const byOrder = (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
 
   return (
     <XpContent>
       <h2>Experiences</h2>
-      <CardsContainer>
-        {years.map(year =>
-          <div key={groupByYear[year][0].node.frontmatter.year}>
-            <Year>{groupByYear[year][0].node.frontmatter.year}</Year>
-            {groupByYear[year].map(project =>
-              <Card key={project.node.id}>
-                <CardImage>
-                  <Image
-                    fluid={project.node.frontmatter.image.childImageSharp.fluid}
-                    alt=""
-                    style={{
-                      minWidth: 50,
-                      minHeight: 50,
-                    }}
-                    imgStyle={{
-                      borderRadius: '6px 6px 0 0'
-                    }}
-                  />
-                </CardImage>
-                <CardContent>
-                  <CardTitle>{project.node.frontmatter.title}</CardTitle>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        )}
-      </CardsContainer>
+      {years.map(year =>
+        <CardsContainer key={groupByYear[year][0].node.frontmatter.year}>
+          <Year>{groupByYear[year][0].node.frontmatter.year}</Year>
+          {groupByYear[year].sort(byOrder).map(project =>
+            <Card key={project.node.id} right={placement++ % 2}>
+              <CardImage>
+                <Image
+                  fluid={project.node.frontmatter.image.childImageSharp.fluid}
+                  alt={project.node.frontmatter.description}
+                  style={{}}
+                  imgStyle={{
+                    borderRadius: '6px 6px 0 0',
+                    width: '100%'
+                  }}
+                />
+              </CardImage>
+              <CardContent>
+                <CardHeader>
+                  <CardCat>{project.node.frontmatter.category}</CardCat>
+                  <CardLink href={project.node.frontmatter.url}>
+                    {project.node.frontmatter.link}
+                  </CardLink>
+                </CardHeader>
+                <CardMain>
+                  <CardDescription>{project.node.frontmatter.description}</CardDescription>
+                  <CardTime>{project.node.frontmatter.time}</CardTime>
+                </CardMain>
+                <CardFooter>
+                  <div>{project.node.frontmatter.tags}</div>
+                </CardFooter>
+              </CardContent>
+            </Card>
+          )}
+        </CardsContainer>
+      )}
     </XpContent>
   )
 }
@@ -141,9 +198,15 @@ const Things = () => {
         <Thing><Ava width={iconSize} /></Thing>
         <Thing><Cmd width={iconSize}/></Thing>
         <Thing><Docker width={iconSize}/></Thing>
+        <Thing><Gatsby width={iconSize}/></Thing>
+        <Thing><Git width={iconSize}/></Thing>
+        <Thing><Graphql width={iconSize}/></Thing>
         <Thing><Pg width={iconSize}/></Thing>
         <Thing><Phoenix width={iconSize}/></Thing>
+        <Thing><Pug width={iconSize}/></Thing>
         <Thing><Reakt width={iconSize}/></Thing>
+        <Thing><Redux width={iconSize}/></Thing>
+        <Thing><Ruby width={iconSize}/></Thing>
         <Thing><Nodejs width={iconSize}/></Thing>
         <Thing><Ubuntu width={iconSize}/></Thing>
         <Thing><Vim width={iconSize}/></Thing>
@@ -185,24 +248,21 @@ const About = () => {
           node {
             id
             frontmatter {
-              description
-              title
-              url
-              time
+              order
               year
+              category
+              link
+              url
+              description
+              time
               tags
               image {
                 childImageSharp {
-                  fixed(width: 300, height: 300) {
-                    ...GatsbyImageSharpFixed
-                  }
-                  fluid {
+                  fluid(maxWidth: 680, maxHeight: 350) {
                     ...GatsbyImageSharpFluid
                   }
- 
                 }
               }
-
             }
           }
         }
