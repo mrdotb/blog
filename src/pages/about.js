@@ -121,12 +121,12 @@ const CardTime = styled.div`
 const CardFooter = styled.footer`
   max-width: ${rhythm(20)};
   align-self: flex-end;
-  text-align: left;
+  text-align: right;
 `
 const Experiences = ({data}) => {
   let placement = 0
   const groupByYear = groupBy(data, e => e.node.frontmatter.year)
-  const years = Object.keys(groupByYear).sort()
+  const years = Object.keys(groupByYear).sort((a, b) => b - a)
   const byOrder = (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
 
   return (
@@ -144,7 +144,8 @@ const Experiences = ({data}) => {
                   style={{}}
                   imgStyle={{
                     borderRadius: '6px 6px 0 0',
-                    width: '100%'
+                    width: '100%',
+                    marginBottom: '0',
                   }}
                 />
               </CardImage>
