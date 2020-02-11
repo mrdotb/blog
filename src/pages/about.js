@@ -63,19 +63,20 @@ const XpContent = styled(Content)`
 const CardsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 0 ${rhythm(1)} 0;
 `
 const Year = styled.div`
   align-self: center;
   font-size: ${scale(1.2).fontSize};
   line-height: ${scale(1.2).lineHeight};
-  margin: 0 0 ${rhythm(1)} 0;
+  margin: 0;
 `
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   max-width: ${rhythm(26)};
   width: 100%;
-  margin: 0 0 ${rhythm(2)} 0;
+  margin: ${rhythm(1)} 0;
   border-radius: 6px;
   box-shadow: 0px 5px 30px rgba(0,0,0,0.15);
   background-color: rgba(252,253,255,1.00);
