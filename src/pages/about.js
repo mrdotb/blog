@@ -124,6 +124,10 @@ const CardFooter = styled.footer`
   align-self: flex-end;
   text-align: right;
 `
+const Tags = styled.div`
+  font-size: ${scale(-1 / 5).fontSize};
+  line-height: 1rem;
+`
 const Experiences = ({data}) => {
   let placement = 0
   const groupByYear = groupBy(data, e => e.node.frontmatter.year)
@@ -162,7 +166,7 @@ const Experiences = ({data}) => {
                   <CardTime>{project.node.frontmatter.time}</CardTime>
                 </CardMain>
                 <CardFooter>
-                  <div>{project.node.frontmatter.tags}</div>
+                  <Tags>{project.node.frontmatter.tags}</Tags>
                 </CardFooter>
               </CardContent>
             </Card>

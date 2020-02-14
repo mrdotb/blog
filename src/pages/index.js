@@ -51,11 +51,11 @@ const PostsBloc = styled.div`
 `
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
+    const { location, data } = this.props
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout>
+      <Layout location={location}>
         <SEO title="All posts" description="meta descript" />
         <Container>
           <Content>
@@ -74,6 +74,7 @@ class BlogIndex extends React.Component {
 
 BlogIndex.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 }
 
 export default BlogIndex
