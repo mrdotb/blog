@@ -54,16 +54,14 @@ const Bio = () => {
       <p>
         Hi, I am <strong>{author}</strong>,
         <br />
-        curious developer
+        curious developer.
         <br />
-        study at {' '}
+        From {' '}
         <a rel="noopener noreferrer" target="_blank" href="https://42.fr/">
-          <School width={rhythm(1 - 1 / 3)} /> school.
+          <School width={rhythm(1 - 1 / 4)} /> school.
         </a>{' '}
         <br />
-        live in Thailand {'  '} <ThailandFlag width={rhythm(1 - 1 / 3)} />
-        <br />
-        p2p learning !
+        Thailand {'  '} <ThailandFlag width={rhythm(1 - 1 / 4)} />.
       </p>
     </BioContainer>
   )
