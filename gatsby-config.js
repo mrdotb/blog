@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'mrdotb Blog',
     author: 'mrdotb',
-    description: 'mrdotb.',
-    siteUrl: 'https://mrdotb.io/',
+    description: 'mrdotb',
+    siteUrl: 'https://mrdotb.com/',
     social: {
       github: 'https://github.com/mrdotb/',
       linkedin: 'https://www.linkedin.com/in/baptiste-chaleil-9494a775/'
