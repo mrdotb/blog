@@ -232,7 +232,7 @@ const About = () => {
         }
       }
 
-      markdownRemark(fileAbsolutePath: {regex: "/page/about/"}) {
+      markdownRemark(fileAbsolutePath: {regex: "/page/about/about.md/"}) {
         id
         html
         frontmatter {
@@ -277,7 +277,6 @@ const About = () => {
   `)
 
   const { author } = data.site.siteMetadata
-  console.log(data)
 
   return (
     <Layout>
