@@ -50,8 +50,6 @@ const Footer = ({children}) => {
           © mrdotb {new Date().getFullYear()}, Built with{' '}
           <Link
             className="darklink"
-            rel="noopener noreferrer"
-            target="_blank"
             href="https://www.gatsbyjs.org"
           >
             Gatsby
