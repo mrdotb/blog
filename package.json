@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
+    "devicons": "^1.8.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-disqus": "^1.1.4",
