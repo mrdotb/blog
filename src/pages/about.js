@@ -120,19 +120,34 @@ const CardTime = styled.div`
   color: rgba(136,136,136,1.00);
 `
 const CardFooter = styled.footer`
-  max-width: ${rhythm(20)};
-  align-self: flex-end;
-  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  //max-width: ${rhythm(20)};
+  //align-self: flex-end;
 `
 const Tags = styled.div`
   font-size: ${scale(-1 / 5).fontSize};
-  line-height: 1rem;
+  line-height: ${scale(-1 / 5).lineHeight};
+  font-family: 'devicons';
+  background-color: #000;
+  color: #fff;
+  padding: ${rhythm(0.2)} ${rhythm(0.6)};
+  margin: ${rhythm(0.1)};
+  border-radius: 6px;
 `
 const Experiences = ({data}) => {
   let placement = 0
   const groupByYear = groupBy(data, e => e.node.frontmatter.year)
   const years = Object.keys(groupByYear).sort((a, b) => b - a)
   const byOrder = (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
+  //const spanify = tag => {
+  //  const split = tag.split(' ')
+  //  if (split.length === 1) {
+  //    return tag
+  //  }
+
+  //  return `${split[0]} <span class="devicons">${split[1]}</span>`
+  //}
 
   return (
     <XpContent>
@@ -166,7 +181,9 @@ const Experiences = ({data}) => {
                   <CardTime>{project.node.frontmatter.time}</CardTime>
                 </CardMain>
                 <CardFooter>
-                  <Tags>{project.node.frontmatter.tags}</Tags>
+                  {project.node.frontmatter.tags.map(tag => (
+                    <Tags key={tag} dangerouslySetInnerHTML={{__html: tag}}/>
+                  ))}
                 </CardFooter>
               </CardContent>
             </Card>

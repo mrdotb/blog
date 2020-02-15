@@ -6,6 +6,6 @@ link: warped
 url: http://mrdotb.github.io/warped/
 description: "Warped, final year project at Multimedia school"
 time: "2 weeks"
-tags: "#javascript #phaserJS #gamedesign"
+tags: ["javascript &#xe681", "phaserJS", "gamedesign"]
 order: 3
 ---
