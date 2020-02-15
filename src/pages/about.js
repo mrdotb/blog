@@ -104,7 +104,6 @@ const CardCat = styled.header`
   color: rgba(136,136,136,1.00);
 `
 const CardLink = styled.a`
-  color: rgba(136,136,136,1.00);
   text-decoration: underline;
 `
 const CardMain = styled.main`
@@ -130,8 +129,8 @@ const Tags = styled.div`
   line-height: ${scale(-1 / 5).lineHeight};
   font-family: 'devicons';
   border: solid 1px #000;
-  padding: ${rhythm(0.2)} ${rhythm(0.6)};
-  margin: ${rhythm(0.1)};
+  padding: ${rhythm(0.1)} ${rhythm(0.6)} ${rhythm(0.2)};
+  margin: ${rhythm(0.2)} ${rhythm(0.1)};
   border-radius: 20px;
 `
 const Experiences = ({data}) => {
