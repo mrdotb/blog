@@ -1,10 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import { rhythm } from '../utils/typography'
 import {Container, Content} from './utils'
-import Nav from './nav'
 
 import Github from '../../content/assets/github.inline.svg'
 import Linkedin from '../../content/assets/linkedin.inline.svg'
@@ -23,7 +23,7 @@ const LinkIcon = styled.a`
   padding: ${rhythm(1 / 4)};
 `
 
-const Footer = () => {
+const Footer = ({children}) => {
   const data = useStaticQuery(graphql`
     query SocialQuery {
       site {
@@ -43,7 +43,7 @@ const Footer = () => {
     <FContainer black>
       <FContent>
         <div>
-          <Nav />
+          {children}
         </div>
 
         <div>
@@ -70,6 +70,10 @@ const Footer = () => {
       </FContent>
     </FContainer>
   )
+}
+
+Footer.propTypes = {
+  children: PropTypes.element,
 }
 
 export default Footer

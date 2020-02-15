@@ -8,10 +8,10 @@ const nav = [
   { name: 'Blog', to: '/blog' },
 ]
 
-const Nav = () => (
+const Nav = ({location}) => (
   nav.map(e => (
     <Link
-      className="darklink"
+      className={location.pathname === e.to ? 'darklink active' : 'darklink'}
       key={e.name}
       to={e.to}
       style={{

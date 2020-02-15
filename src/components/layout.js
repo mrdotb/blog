@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import OctagonAnimation from './octagonAnimation'
+import Nav from './nav'
 import Header from './header'
 import Footer from './footer'
 
@@ -31,17 +32,21 @@ const SiteFooter = styled.div`
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props
+    const { children, location } = this.props
 
     return (
       <SiteContainer>
         <SiteHeader>
-          <Header />
+          <Header>
+            <Nav location={location} />
+          </Header>
           <OctagonAnimation />
         </SiteHeader>
         <SiteContent>{children}</SiteContent>
         <SiteFooter>
-          <Footer />
+          <Footer>
+            <Nav location={location} />
+          </Footer>
         </SiteFooter>
       </SiteContainer>
     )
@@ -50,6 +55,7 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.array,
+  location: PropTypes.object,
 }
 
 export default Layout

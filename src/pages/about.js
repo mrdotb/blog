@@ -221,7 +221,7 @@ const Things = () => {
   )
 }
 
-const About = () => {
+const About = ({location}) => {
   const data = useStaticQuery(graphql`
     query About {
       site {
@@ -279,7 +279,7 @@ const About = () => {
   const { author } = data.site.siteMetadata
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="About mrdotb" description="" />
 
       <Container>
@@ -315,6 +315,10 @@ const About = () => {
 
     </Layout>
   )
+}
+
+About.propTypes = {
+  location: PropTypes.Object
 }
 
 export default About

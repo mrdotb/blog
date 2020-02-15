@@ -1,16 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { scale } from '../utils/typography'
 import {Container, Content} from './utils'
-import Nav from './nav'
 
 const HContent = styled(Content)`
   justify-content: space-between;
   align-items: center;
 `
-const Header = () => (
+const Header = ({children}) => (
   <Container black>
     <HContent>
       <div>
@@ -25,10 +25,14 @@ const Header = () => (
         </Link>
       </div>
       <div>
-        <Nav />
+        {children}
       </div>
     </HContent>
   </Container>
 )
+
+Header.propTypes = {
+  children: PropTypes.element,
+}
 
 export default Header

@@ -13,7 +13,7 @@ altonTheme.overrideThemeStyles = () => ({
   'a.darklink': {
     color: '#888888'
   },
-  'a.darklink:hover, a.darklink:active': {
+  'a.darklink:hover, a.darklink:active, a.darklink.active': {
     color: '#c29948',
   },
 })
