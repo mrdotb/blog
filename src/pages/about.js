@@ -129,11 +129,10 @@ const Tags = styled.div`
   font-size: ${scale(-1 / 5).fontSize};
   line-height: ${scale(-1 / 5).lineHeight};
   font-family: 'devicons';
-  background-color: #000;
-  color: #fff;
+  border: solid 1px #000;
   padding: ${rhythm(0.2)} ${rhythm(0.6)};
   margin: ${rhythm(0.1)};
-  border-radius: 6px;
+  border-radius: 20px;
 `
 const Experiences = ({data}) => {
   let placement = 0
