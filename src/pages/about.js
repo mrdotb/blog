@@ -215,22 +215,22 @@ const Things = () => {
     <ThingsContent>
       <h2>Things I work with</h2>
       <IconContainer>
-        <Thing><Ansible width={iconSize} /></Thing>
-        <Thing><Ava width={iconSize} /></Thing>
-        <Thing><Cmd width={iconSize}/></Thing>
-        <Thing><Docker width={iconSize}/></Thing>
-        <Thing><Gatsby width={iconSize}/></Thing>
-        <Thing><Git width={iconSize}/></Thing>
-        <Thing><Graphql width={iconSize}/></Thing>
-        <Thing><Pg width={iconSize}/></Thing>
-        <Thing><Phoenix width={iconSize}/></Thing>
-        <Thing><Pug width={iconSize}/></Thing>
-        <Thing><Reakt width={iconSize}/></Thing>
-        <Thing><Redux width={iconSize}/></Thing>
-        <Thing><Ruby width={iconSize}/></Thing>
-        <Thing><Nodejs width={iconSize}/></Thing>
-        <Thing><Ubuntu width={iconSize}/></Thing>
-        <Thing><Vim width={iconSize}/></Thing>
+        <Thing><Ansible style={{width: iconSize}} /></Thing>
+        <Thing><Ava style={{width: iconSize}} /></Thing>
+        <Thing><Cmd style={{width: iconSize}}/></Thing>
+        <Thing><Docker style={{width: iconSize}}/></Thing>
+        <Thing><Gatsby style={{width: iconSize}}/></Thing>
+        <Thing><Git style={{width: iconSize}}/></Thing>
+        <Thing><Graphql style={{width: iconSize}}/></Thing>
+        <Thing><Pg style={{width: iconSize}}/></Thing>
+        <Thing><Phoenix style={{width: iconSize}}/></Thing>
+        <Thing><Pug style={{width: iconSize}}/></Thing>
+        <Thing><Reakt style={{width: iconSize}}/></Thing>
+        <Thing><Redux style={{width: iconSize}}/></Thing>
+        <Thing><Ruby style={{width: iconSize}}/></Thing>
+        <Thing><Nodejs style={{width: iconSize}}/></Thing>
+        <Thing><Ubuntu style={{width: iconSize}}/></Thing>
+        <Thing><Vim style={{width: iconSize}}/></Thing>
       </IconContainer>
     </ThingsContent>
   )

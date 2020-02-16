@@ -58,10 +58,10 @@ const Footer = ({children}) => {
 
         <div>
           <LinkIcon href={github}>
-            <Github width={rhythm(1)} />
+            <Github style={{width: rhythm(1)}} />
           </LinkIcon>
           <LinkIcon href={linkedin}>
-            <Linkedin width={rhythm(1)} />
+            <Linkedin style={{width: rhythm(1)}} />
           </LinkIcon>
         </div>
 

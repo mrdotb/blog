@@ -35,8 +35,7 @@ class OctagonAnimation extends React.Component {
       <OctoContainer black>
         <OctoContent>
           <svg
-            width={rhythm(13)}
-            height={rhythm(13)}
+            style={{width: rhythm(13), height: rhythm(13)}}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 114.938 114.938"
           >

@@ -58,10 +58,10 @@ const Bio = () => {
         <br />
         From {' '}
         <a rel="noopener noreferrer" target="_blank" href="https://42.fr/">
-          <School width={rhythm(1 - 1 / 4)} /> school.
+          <School style={{width: rhythm(1 - 1 / 4)}} /> school.
         </a>{' '}
         <br />
-        Thailand {'  '} <ThailandFlag width={rhythm(1 - 1 / 4)} />.
+        Thailand {'  '} <ThailandFlag style={{width: rhythm(1 - 1 / 4)}}/>.
       </p>
     </BioContainer>
   )
