@@ -57,7 +57,7 @@ const Bio = () => {
         curious developer.
         <br />
         From {' '}
-        <a rel="noopener noreferrer" target="_blank" href="https://42.fr/">
+        <a href="https://42.fr/">
           <School style={{width: rhythm(1 - 1 / 4)}} /> school.
         </a>{' '}
         <br />

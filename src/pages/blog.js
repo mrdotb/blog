@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
@@ -15,10 +14,6 @@ const Content = styled(ContentBase)`
   flex-direction: row;
   flex-wrap: wrap;
   padding: ${rhythm(2)} 0;
-`
-const BioBloc = styled.div`
-  flex: 1 1 ${rhythm(8)};
-  padding: 0 ${rhythm(0.5)};
 `
 const PostsBloc = styled.div`
   flex: 1 1 ${rhythm(26)};
@@ -37,9 +32,6 @@ class BlogIndex extends React.Component {
             <PostsBloc>
               {posts.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
             </PostsBloc>
-            <BioBloc>
-              <Bio />
-            </BioBloc>
           </Content>
         </Container>
       </Layout>
