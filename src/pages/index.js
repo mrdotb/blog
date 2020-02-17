@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -13,12 +14,18 @@ import Post from '../components/post'
 const Content = styled(ContentBase)`
   justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: ${rhythm(2)} 0;
+  flex-wrap: wrap;
+  ${MOBILE_MEDIA_QUERY} {
+    flex-wrap: wrap-reverse;
+  }
 `
 const BioBloc = styled.div`
   flex: 1 1 ${rhythm(8)};
   padding: 0 ${rhythm(0.5)};
+  ${MOBILE_MEDIA_QUERY} {
+    flex: 1;
+  }
 `
 const PostsBloc = styled.div`
   flex: 1 1 ${rhythm(26)};

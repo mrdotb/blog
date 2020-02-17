@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
 import {Container} from './utils'
@@ -11,6 +12,21 @@ import ThailandFlag from '../../content/assets/thailand.inline.svg'
 const BioContainer = styled(Container)`
   flex-direction: column;
   align-items: center;
+  ${MOBILE_MEDIA_QUERY} {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: ${rhythm(1)};
+  }
+`
+const Text = styled.p`
+  display: block;
+  width: 150px;
+`
+const StyledImage = styled(Image)`
+  margin-bottom: ${rhythm(0.5)};
+  min-width: 50;
+  min-height: 50;
+  border-radius: 100%;
 `
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -38,31 +54,22 @@ const Bio = () => {
 
   return (
     <BioContainer>
-      <Image
+      <StyledImage
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
-        style={{
-          marginBottom: rhythm(0.5),
-          minWidth: 50,
-          minHeight: 50,
-          borderRadius: '100%',
-        }}
         imgStyle={{
           borderRadius: '50%',
         }}
       />
-      <p>
+      <Text>
         Hi, I am <strong>{author}</strong>,
-        <br />
         curious developer.
-        <br />
         From {' '}
         <a href="https://42.fr/">
           <School style={{width: rhythm(1 - 1 / 4)}} /> school.
         </a>{' '}
-        <br />
         Thailand {'  '} <ThailandFlag style={{width: rhythm(1 - 1 / 4)}}/>.
-      </p>
+      </Text>
     </BioContainer>
   )
 }
