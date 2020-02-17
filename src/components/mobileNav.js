@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm, scale } from '../utils/typography'
@@ -36,7 +36,7 @@ const Container = styled.div`
 const StyledLink = styled(Link)`
   flex: 1;
   padding: ${rhythm(0.3)} 0;
-  color: #000;
+  color: #666;
   font-size: ${scale(0.1).fontSize};
   line-height: ${scale(0.1).lineHeight};
   text-transform: lowercase;
@@ -44,6 +44,18 @@ const StyledLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  > svg {
+    fill: #666;
+  }
+${props => props.active &&
+  css`
+  color: #000;
+  > svg {
+    fill: #000;
+  }
+  `
+}
+  props
 `
 const Svg = ({name, style}) => {
   switch (name) {
@@ -66,7 +78,7 @@ const MobileNav = ({location}) => (
     <Container>
       {nav.map(e => (
         <StyledLink
-          className={location.pathname === e.to ? '' : ''}
+          active={location.pathname === e.to}
           key={e.name}
           to={e.to}
         >

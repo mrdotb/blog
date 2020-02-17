@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
 import {Container, Content} from './utils'
@@ -12,6 +13,9 @@ import Linkedin from '../../content/assets/linkedin.inline.svg'
 const FContainer = styled(Container)`
   align-items: center;
   min-height: ${rhythm(2)};
+  ${MOBILE_MEDIA_QUERY} {
+    display: none;
+  }
 `
 const FContent = styled(Content)`
   justify-content: space-between;

@@ -11,9 +11,6 @@ const HContent = styled(Content)`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  ${MOBILE_MEDIA_QUERY} {
-    display: none;
-  }
 `
 const StyledLink = styled(Link)`
   font-size: ${scale(1.5).fontSize};

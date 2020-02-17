@@ -1,11 +1,24 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import {Container, Content} from './utils'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
 
 const OctoContainer = styled(Container)`
   height: ${rhythm(7)};
+  ${MOBILE_MEDIA_QUERY} {
+    height: ${rhythm(4)};
+  }
+`
+
+const StyledSvg = styled.svg`
+  width: ${rhythm(13)};
+  height: ${rhythm(13)};
+  ${MOBILE_MEDIA_QUERY} {
+    width: ${rhythm(9)};
+    height: ${rhythm(9)};
+  }
 `
 const OctoContent = styled(Content)`
   justify-content: flex-end;
@@ -34,8 +47,7 @@ class OctagonAnimation extends React.Component {
     return (
       <OctoContainer black>
         <OctoContent>
-          <svg
-            style={{width: rhythm(13), height: rhythm(13)}}
+          <StyledSvg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 114.938 114.938"
           >
@@ -49,7 +61,7 @@ class OctagonAnimation extends React.Component {
                 d="M110.008 35.547l.113 43.571-30.73 30.89-43.57.113-30.89-30.73-.114-43.57 30.73-30.89 43.571-.114z"
               />
             ))}
-          </svg>
+          </StyledSvg>
 
         </OctoContent>
       </OctoContainer>

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
 
@@ -14,6 +15,9 @@ const nav = [
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  ${MOBILE_MEDIA_QUERY} {
+    display: none;
+  }
 `
 const StyledLink = styled(Link)`
   padding: ${rhythm(1 / 3)};
