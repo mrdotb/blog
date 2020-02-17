@@ -15,6 +15,8 @@ const FContainer = styled(Container)`
 `
 const FContent = styled(Content)`
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 `
 const Link = styled.a`
   text-decoration: underline;

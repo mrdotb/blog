@@ -1,5 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
+
 import { rhythm } from '../utils/typography'
 
 const nav = [
@@ -8,19 +11,29 @@ const nav = [
   { name: 'Blog', to: '/blog' },
 ]
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+const StyledLink = styled(Link)`
+  padding: ${rhythm(1 / 3)};
+`
 const Nav = ({location}) => (
-  nav.map(e => (
-    <Link
-      className={location.pathname === e.to ? 'darklink active' : 'darklink'}
-      key={e.name}
-      to={e.to}
-      style={{
-        padding: rhythm(1 / 3),
-      }}
-    >
-      {e.name}
-    </Link>
-  ))
+  <Container>
+    {nav.map(e => (
+      <StyledLink
+        className={location.pathname === e.to ? 'darklink active' : 'darklink'}
+        key={e.name}
+        to={e.to}
+      >
+        {e.name}
+      </StyledLink>
+    ))}
+  </Container>
 )
+
+Nav.propTypes = {
+  location: PropTypes.object
+}
 
 export default Nav

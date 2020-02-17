@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import OctagonAnimation from './octagonAnimation'
 import Nav from './nav'
+import MobileNav from './mobileNav'
 import Header from './header'
 import Footer from './footer'
 
@@ -36,6 +37,7 @@ class Layout extends React.Component {
 
     return (
       <SiteContainer>
+        <MobileNav location={location}/>
         <SiteHeader>
           <Header>
             <Nav location={location} />

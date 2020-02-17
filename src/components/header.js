@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { scale } from '../utils/typography'
 import {Container, Content} from './utils'
@@ -9,20 +10,30 @@ import {Container, Content} from './utils'
 const HContent = styled(Content)`
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  ${MOBILE_MEDIA_QUERY} {
+    display: none;
+  }
 `
+const StyledLink = styled(Link)`
+  font-size: ${scale(1.5).fontSize};
+  line-height: ${scale(1.5).lineHeight};
+  ${MOBILE_MEDIA_QUERY} {
+    font-size: ${scale(2.2).fontSize};
+    line-height: ${scale(2.2).lineHeight};
+  }
+`
+
 const Header = ({children}) => (
   <Container black>
     <HContent>
       <div>
-        <Link
+        <StyledLink
           className="darklink"
-          style={{
-            ...scale(1.5),
-          }}
           to={'/'}
         >
           mrdotb
-        </Link>
+        </StyledLink>
       </div>
       <div>
         {children}
