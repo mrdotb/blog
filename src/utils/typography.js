@@ -7,14 +7,16 @@ import altonTheme from 'typography-theme-alton'
 // altonTheme.overrideThemeStyles = ({ rhythm }, options) => ({
 altonTheme.overrideThemeStyles = () => ({
   a: {
-    color: 'rgb(102, 147, 205)',
+    color: 'rgb(59, 115, 188)',
     transition: 'color .5s',
+    textDecoration: 'underline',
   },
   'a:hover': {
     color: 'rgb(65, 105, 225)',
   },
   'a.darklink': {
     color: '#888888',
+    textDecoration: 'none',
   },
   'a.darklink:hover, a.darklink:active, a.darklink.active': {
     color: '#c29948',

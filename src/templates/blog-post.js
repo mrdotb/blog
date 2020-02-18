@@ -31,11 +31,12 @@ const Pagination = styled.ul`
 `
 const StyledLink = styled(Link)`
   padding: ${rhythm(0.5)};
-  border: 1px solid rgb(102, 147, 205);
+  border: 1px solid rgb(59, 115, 188);
+  text-decoration: none;
   transition: all 0.3s;
   &:hover {
     color: #fff;
-    background-color: rgb(65, 105, 225);
+    background-color: rgb(59, 115, 188);
   }
 `
 const DisqusContent = styled(Content)`
