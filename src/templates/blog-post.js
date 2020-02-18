@@ -27,6 +27,20 @@ const Pagination = styled.ul`
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  margin: 0;
+`
+const StyledLink = styled(Link)`
+  padding: ${rhythm(0.5)};
+  border: 1px solid rgb(102, 147, 205);
+  transition: all 0.3s;
+  &:hover {
+    color: #fff;
+    background-color: rgb(65, 105, 225);
+  }
+`
+const DisqusContent = styled(Content)`
+  padding: ${rhythm(2)} ${rhythm(0.5)};
+  display: block;
 `
 
 class BlogPostTemplate extends React.Component {
@@ -62,30 +76,35 @@ class BlogPostTemplate extends React.Component {
                 }}
               />
               <footer>
-                <Disqus config={disqusConfig} />
+                <nav>
+                  <Pagination>
+                    <li>
+                      {previous && (
+                        <StyledLink to={previous.fields.slug} rel="prev">
+                          ← {previous.frontmatter.title}
+                        </StyledLink>
+                      )}
+                    </li>
+                    <li>
+                      {next && (
+                        <StyledLink to={next.fields.slug} rel="next">
+                          {next.frontmatter.title} →
+                        </StyledLink>
+                      )}
+                    </li>
+                  </Pagination>
+                </nav>
               </footer>
             </article>
           </BPContent>
         </Container>
 
-        <nav>
-          <Pagination>
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </Pagination>
-        </nav>
+        <Container>
+          <DisqusContent>
+            <Disqus config={disqusConfig} />
+          </DisqusContent>
+        </Container>
+
       </Layout>
     )
   }
