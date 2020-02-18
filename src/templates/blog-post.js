@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
@@ -62,7 +62,6 @@ class BlogPostTemplate extends React.Component {
                 }}
               />
               <footer>
-                <CommentCount config={disqusConfig} placeholder={'...'} />
                 <Disqus config={disqusConfig} />
               </footer>
             </article>
