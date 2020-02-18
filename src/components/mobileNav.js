@@ -44,7 +44,9 @@ const StyledLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: color .1s linear;
   > svg {
+    transition: fill .1s linear;
     fill: #666;
   }
 ${props => props.active &&
@@ -78,7 +80,7 @@ const MobileNav = ({location}) => (
     <Container>
       {nav.map(e => (
         <StyledLink
-          active={location.pathname === e.to}
+          active={location.pathname === e.to ? 1 : 0}
           key={e.name}
           to={e.to}
         >

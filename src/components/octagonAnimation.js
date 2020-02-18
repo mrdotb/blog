@@ -8,7 +8,7 @@ import { rhythm } from '../utils/typography'
 const OctoContainer = styled(Container)`
   height: ${rhythm(7)};
   ${MOBILE_MEDIA_QUERY} {
-    height: ${rhythm(4)};
+    height: ${rhythm(3)};
   }
 `
 
@@ -16,8 +16,8 @@ const StyledSvg = styled.svg`
   width: ${rhythm(13)};
   height: ${rhythm(13)};
   ${MOBILE_MEDIA_QUERY} {
-    width: ${rhythm(9)};
-    height: ${rhythm(9)};
+    width: ${rhythm(7)};
+    height: ${rhythm(7)};
   }
 `
 const OctoContent = styled(Content)`
