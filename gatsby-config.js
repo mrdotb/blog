@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'mrdotb Blog',
+    title: 'mrdotb Software Developer',
     author: 'mrdotb',
-    description: 'mrdotb',
+    description: 'mrdotb blog & portfolio',
     siteUrl: 'https://mrdotb.com/',
     social: {
       github: 'https://github.com/mrdotb/',
@@ -10,13 +10,7 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-disqus',
-      options: {
-        shortname: 'mrdotb'
-      }
-    },
-    {
+   {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
@@ -31,14 +25,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/assets`,
@@ -46,6 +32,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+   {
       resolve: 'gatsby-plugin-styled-components',
       options: {},
     },
@@ -75,24 +69,31 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-eslint',
     {
+      resolve: 'gatsby-plugin-disqus',
+      options: {
+        shortname: 'mrdotb'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-158581235-1'
       },
     },
-    'gatsby-plugin-feed',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'mrdotb Blog',
-        short_name: 'mrdotb',
+        query: ``,
+        name: 'mrdotb blog & portolio',
+        short_name: 'mrdotb blog',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#663399',
+        background_color: '#fff',
+        theme_color: '#26282a',
         display: 'minimal-ui',
         icon: 'content/assets/mrdotb-logo.png',
       },
     },
+    `gatsby-plugin-offline`,
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-typography',
@@ -101,8 +102,59 @@ module.exports = {
         omitGoogleFont: false
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+   {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: {order: DESC, fields: [frontmatter___date]},
+                  filter: {fields: {collection: {eq: "blog"}}}
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "mrdotb blog",
+          },
+        ],
+      },
+    }
   ],
 }

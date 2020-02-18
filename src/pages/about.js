@@ -295,7 +295,7 @@ const About = ({location}) => {
 
   return (
     <Layout location={location}>
-      <SEO title="About mrdotb" description="" />
+      <SEO title="Resume" />
 
       <Container>
         <AContent>

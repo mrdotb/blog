@@ -38,7 +38,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={location}>
-        <SEO title="All posts" description="meta descript" />
+        <SEO title="Home" />
         <Container>
           <Content>
             <PostsBloc>
