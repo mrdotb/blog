@@ -36,18 +36,25 @@ const Container = styled.div`
 const StyledLink = styled(Link)`
   flex: 1;
   padding: ${rhythm(0.3)} 0;
-  color: #666;
   font-size: ${scale(0.1).fontSize};
   line-height: ${scale(0.1).lineHeight};
   text-transform: lowercase;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: color .1s linear;
+  transition: all .1s linear;
+  color: #666;
   > svg {
     transition: fill .1s linear;
     fill: #666;
+  }
+  &:hover {
+    color: #000;
+    > svg {
+      fill: #000;
+    }
   }
 ${props => props.active &&
   css`
@@ -57,7 +64,6 @@ ${props => props.active &&
   }
   `
 }
-  props
 `
 const Svg = ({name, style}) => {
   switch (name) {
