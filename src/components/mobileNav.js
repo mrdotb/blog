@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
@@ -8,6 +8,7 @@ import { rhythm, scale } from '../utils/typography'
 import Home from '../../content/assets/home.inline.svg'
 import About from '../../content/assets/about.inline.svg'
 import Blog from '../../content/assets/hash.inline.svg'
+import Github from '../../content/assets/github.inline.svg'
 
 const nav = [
   { name: 'Home', to: '/'},
@@ -33,7 +34,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const StyledLink = styled(Link)`
+const linkStyle = `
   flex: 1;
   padding: ${rhythm(0.3)} 0;
   font-size: ${scale(0.1).fontSize};
@@ -65,6 +66,12 @@ ${props => props.active &&
   `
 }
 `
+const StyledLink = styled(Link)`
+  ${linkStyle}
+`
+const StyledA = styled.a`
+  ${linkStyle}
+`
 const Svg = ({name, style}) => {
   switch (name) {
   case 'Home':
@@ -73,6 +80,8 @@ const Svg = ({name, style}) => {
     return <About style={style} />
   case 'Blog':
     return <Blog style={style} />
+  case 'Github':
+    return <Github style={style} />
   }
 }
 
@@ -81,22 +90,41 @@ Svg.propTypes = {
   style: PropTypes.object
 }
 
-const MobileNav = ({location}) => (
-  <Fixed>
-    <Container>
-      {nav.map(e => (
-        <StyledLink
-          active={location.pathname === e.to ? 1 : 0}
-          key={e.name}
-          to={e.to}
-        >
-          <Svg name={e.name} style={{width: rhythm(0.8)}} />
-          {e.name}
-        </StyledLink>
-      ))}
-    </Container>
-  </Fixed>
-)
+const MobileNav = ({location}) => {
+  const data = useStaticQuery(graphql`
+    query GithubQuery {
+      site {
+        siteMetadata {
+          social {
+            github
+          }
+        }
+      }
+    }
+  `)
+  const { github } = data.site.siteMetadata.social
+
+  return (
+    <Fixed>
+      <Container>
+        {nav.map(e => (
+          <StyledLink
+            active={location.pathname === e.to ? 1 : 0}
+            key={e.name}
+            to={e.to}
+          >
+            <Svg name={e.name} style={{width: rhythm(0.8)}} />
+            {e.name}
+          </StyledLink>
+        ))}
+        <StyledA href={github}>
+          <Svg name="Github" style={{width: rhythm(0.8)}} />
+          Github
+        </StyledA>
+      </Container>
+    </Fixed>
+  )
+}
 
 MobileNav.propTypes = {
   location: PropTypes.object
