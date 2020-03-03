@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
-import { scale } from '../utils/typography'
+import { scale } from '../../config/typography'
 import {Container, Content} from '../elements'
 
 const HContent = styled(Content)`

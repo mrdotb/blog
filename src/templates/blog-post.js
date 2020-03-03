@@ -5,7 +5,7 @@ import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 
 import {Container, Content, Layout, SEO} from '../elements'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm, scale } from '../../config/typography'
 
 const BPContent = styled(Content)`
   padding: ${rhythm(2)} ${rhythm(0.5)};

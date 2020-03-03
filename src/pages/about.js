@@ -6,7 +6,7 @@ import groupBy from 'lodash.groupby'
 import PropTypes from 'prop-types'
 
 import { Container, Content, Layout, SEO } from '../elements'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm, scale } from '../../config/typography'
 
 import Ansible from '../../content/assets/ansible.inline.svg'
 import Ava from '../../content/assets/ava.inline.svg'

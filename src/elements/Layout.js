@@ -1,8 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, {createGlobalStyle, ThemeProvider} from 'styled-components'
+
+import 'typeface-domine'
+import 'typeface-open-sans'
 
 import {OctagonAnimation, Nav, MobileNav, Header, Footer} from '../components'
+import theme from '../../config/theme'
+
+const GlobalStyle = createGlobalStyle`
+`
 
 // Fixed footer https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
 const SiteContainer = styled.div`
@@ -27,33 +34,30 @@ const SiteFooter = styled.div`
   flex: none;
 `
 
-class Layout extends React.Component {
-  render() {
-    const { children, location } = this.props
-
-    return (
-      <SiteContainer>
-        <MobileNav location={location}/>
-        <SiteHeader>
-          <Header>
-            <Nav location={location} />
-          </Header>
-          <OctagonAnimation />
-        </SiteHeader>
-        <SiteContent>{children}</SiteContent>
-        <SiteFooter>
-          <Footer>
-            <Nav location={location} />
-          </Footer>
-        </SiteFooter>
-      </SiteContainer>
-    )
-  }
-}
+const Layout = ({ children, location}) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <SiteContainer>
+      <MobileNav location={location}/>
+      <SiteHeader>
+        <Header>
+          <Nav location={location} />
+        </Header>
+        <OctagonAnimation />
+      </SiteHeader>
+      <SiteContent>{children}</SiteContent>
+      <SiteFooter>
+        <Footer>
+          <Nav location={location} />
+        </Footer>
+      </SiteFooter>
+    </SiteContainer>
+  </ThemeProvider>
+)
 
 Layout.propTypes = {
-  children: PropTypes.array,
-  location: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default Layout

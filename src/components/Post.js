@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../config/typography'
 
 const Title = styled.h3`
   margin-bottom: ${rhythm(1 / 4)}

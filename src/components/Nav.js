@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../config/typography'
 
 const nav = [
   { name: 'Home', to: '/' },

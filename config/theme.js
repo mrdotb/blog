@@ -55,7 +55,7 @@ const button = {
   }
 }
 
-const transition = {
+const transitions = {
   easeInOutCubic: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
   easeOutBack: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
   duration: '0.4s',
@@ -65,6 +65,7 @@ const theme = {
   colors,
   shadow,
   button,
+  transitions,
   breakpoints: {
     xs: '400px',
     s: '600px',
@@ -72,8 +73,8 @@ const theme = {
     l: '1200px'
   },
   fontFamily: {
-    body: ``,
-    heading: ``
+    body: `${'lol'}'lol'`,
+    heading: `${'lol'}'lol'`
   },
   layout: {
 
@@ -81,9 +82,6 @@ const theme = {
   borderRadius: {
 
   },
-  transitions: {
-
-  }
 }
 
 export default theme

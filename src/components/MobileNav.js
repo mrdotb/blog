@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
-import { rhythm, scale } from '../utils/typography'
+import { rhythm, scale } from '../../config/typography'
 import Home from '../../content/assets/home.inline.svg'
 import About from '../../content/assets/about.inline.svg'
 import Blog from '../../content/assets/hash.inline.svg'

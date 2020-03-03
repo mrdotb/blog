@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../config/typography'
 
 const Container = styled.div`
   display: flex;

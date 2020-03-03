@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import {Post} from '../components'
 import {Layout, SEO, Container, Content as ContentBase} from '../elements'
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../config/typography'
 
 const Content = styled(ContentBase)`
   justify-content: center;
