@@ -21,6 +21,11 @@ altonTheme.overrideThemeStyles = () => ({
   'a.darklink:hover, a.darklink:active, a.darklink.active': {
     color: '#c29948',
   },
+  'article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary': {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+
 })
 
 const typography = new Typography(altonTheme)

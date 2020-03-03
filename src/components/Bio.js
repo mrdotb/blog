@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
-import {Container} from './utils'
+import {Container} from '../elements'
 import School from '../../content/assets/school.inline.svg'
 import ThailandFlag from '../../content/assets/thailand.inline.svg'
 

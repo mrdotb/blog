@@ -5,9 +5,7 @@ import Image from 'gatsby-image'
 import groupBy from 'lodash.groupby'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { Container, Content } from '../components/utils'
+import { Container, Content, Layout, SEO } from '../elements'
 import { rhythm, scale } from '../utils/typography'
 
 import Ansible from '../../content/assets/ansible.inline.svg'

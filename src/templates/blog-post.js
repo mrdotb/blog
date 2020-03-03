@@ -4,13 +4,13 @@ import { Link, graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import {Container, Content} from '../components/utils'
+import {Container, Content, Layout, SEO} from '../elements'
 import { rhythm, scale } from '../utils/typography'
 
 const BPContent = styled(Content)`
   padding: ${rhythm(2)} ${rhythm(0.5)};
+  max-width: ${rhythm(36)};
+  width: 100%;
 `
 const Title = styled.h1`
   margin-bottom: 0;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import {Container, Content} from './utils'
+import {Container, Content} from '../elements'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'

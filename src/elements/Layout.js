@@ -2,11 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import OctagonAnimation from './octagonAnimation'
-import Nav from './nav'
-import MobileNav from './mobileNav'
-import Header from './header'
-import Footer from './footer'
+import {OctagonAnimation, Nav, MobileNav, Header, Footer} from '../components'
 
 // Fixed footer https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
 const SiteContainer = styled.div`

@@ -3,11 +3,9 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import {Post} from '../components'
+import {Layout, SEO, Container, Content as ContentBase} from '../elements'
 import { rhythm } from '../utils/typography'
-import { Container, Content as ContentBase } from '../components/utils'
-import Post from '../components/post'
 
 const Content = styled(ContentBase)`
   justify-content: center;

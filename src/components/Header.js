@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { scale } from '../utils/typography'
-import {Container, Content} from './utils'
+import {Container, Content} from '../elements'
 
 const HContent = styled(Content)`
   justify-content: space-between;

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../utils/typography'
-import {Container, Content} from './utils'
+import {Container, Content} from '../elements'
 
 import Github from '../../content/assets/github.inline.svg'
 import Linkedin from '../../content/assets/linkedin.inline.svg'
