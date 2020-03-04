@@ -4,10 +4,10 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import {Post} from '../components'
-import {Layout, SEO, Container, Content as ContentBase} from '../elements'
+import {Layout, SEO, Container} from '../elements'
 import { rhythm } from '../../config/typography'
 
-const Content = styled(ContentBase)`
+const Content = styled.div`
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;

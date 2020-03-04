@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components'
 import { rhythm } from '../../config/typography'
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
 ${props => props.black &&
   css`
   background-color: #26282a;
@@ -12,8 +10,9 @@ ${props => props.black &&
 }
 `
 const Content = styled.div`
+  margin: 0 auto;
   display: flex;
-  width: ${rhythm(36)};
+  max-width: ${props => props.theme.layout.big};
   padding: 0 ${rhythm(0.5)};
 `
 

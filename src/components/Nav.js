@@ -12,8 +12,9 @@ const nav = [
   { name: 'Blog', to: '/blog' },
 ]
 
-const Container = styled.div`
+const Box = styled.div`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   ${MOBILE_MEDIA_QUERY} {
     display: none;
@@ -23,7 +24,7 @@ const StyledLink = styled(Link)`
   padding: ${rhythm(1 / 3)};
 `
 const Nav = ({location}) => (
-  <Container>
+  <Box>
     {nav.map(e => (
       <StyledLink
         className={location.pathname === e.to ? 'darklink active' : 'darklink'}
@@ -33,7 +34,7 @@ const Nav = ({location}) => (
         {e.name}
       </StyledLink>
     ))}
-  </Container>
+  </Box>
 )
 
 Nav.propTypes = {

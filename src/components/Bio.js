@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../../config/typography'
-import {Container} from '../elements'
 import School from '../../content/assets/school.inline.svg'
 import ThailandFlag from '../../content/assets/thailand.inline.svg'
 
-const BioContainer = styled(Container)`
+const BioContainer = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   ${MOBILE_MEDIA_QUERY} {

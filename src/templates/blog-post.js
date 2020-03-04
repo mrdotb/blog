@@ -4,10 +4,10 @@ import { Link, graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 
-import {Container, Content, Layout, SEO} from '../elements'
+import {Container, Layout, SEO} from '../elements'
 import { rhythm, scale } from '../../config/typography'
 
-const BPContent = styled(Content)`
+const BPContent = styled('div')`
   padding: ${rhythm(2)} ${rhythm(0.5)};
   max-width: ${rhythm(36)};
   width: 100%;
@@ -39,7 +39,7 @@ const StyledLink = styled(Link)`
     background-color: rgb(59, 115, 188);
   }
 `
-const DisqusContent = styled(Content)`
+const DisqusContent = styled('div')`
   padding: ${rhythm(2)} ${rhythm(0.5)};
   display: block;
 `

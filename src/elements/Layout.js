@@ -5,7 +5,7 @@ import styled, {createGlobalStyle, ThemeProvider} from 'styled-components'
 import 'typeface-domine'
 import 'typeface-open-sans'
 
-import {OctagonAnimation, Nav, MobileNav, Header, Footer} from '../components'
+import {Nav, MobileNav, Header, Footer} from '../components'
 import theme from '../../config/theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -34,7 +34,7 @@ const SiteFooter = styled.div`
   flex: none;
 `
 
-const Layout = ({ children, location}) => (
+const Layout = ({ children, location }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <SiteContainer>
@@ -43,7 +43,6 @@ const Layout = ({ children, location}) => (
         <Header>
           <Nav location={location} />
         </Header>
-        <OctagonAnimation />
       </SiteHeader>
       <SiteContent>{children}</SiteContent>
       <SiteFooter>

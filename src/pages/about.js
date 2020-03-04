@@ -5,7 +5,7 @@ import Image from 'gatsby-image'
 import groupBy from 'lodash.groupby'
 import PropTypes from 'prop-types'
 
-import { Container, Content, Layout, SEO } from '../elements'
+import { Background, Container, Layout, SEO } from '../elements'
 import { rhythm, scale } from '../../config/typography'
 
 import Ansible from '../../content/assets/ansible.inline.svg'
@@ -25,7 +25,8 @@ import Nodejs from '../../content/assets/nodejs.inline.svg'
 import Ubuntu from '../../content/assets/ubuntu.inline.svg'
 import Vim from '../../content/assets/vim.inline.svg'
 
-const AContent = styled(Content)`
+const AContent = styled.div`
+  display: flex;
   flex-wrap: wrap;
   padding: ${rhythm(2)} 0};
 `
@@ -54,7 +55,8 @@ const Text = styled.div`
   font-size: ${scale(-1 / 5).fontSize};
   line-height: ${scale(-1 / 5).lineHeight};
 `
-const XpContent = styled(Content)`
+const XpContent = styled.div`
+  display: flex;
   padding: ${rhythm(2)} ${rhythm(0.5)};
   flex-direction: column;
 `
@@ -194,11 +196,13 @@ Experiences.propTypes = {
   data: PropTypes.array,
 }
 
-const ThingsContent = styled(Content)`
+const ThingsContent = styled.div`
+  display: flex;
   padding: ${rhythm(2)} ${rhythm(0.5)}};
   flex-direction: column;
 `
 const IconContainer = styled(Container)`
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
@@ -318,9 +322,11 @@ const About = ({location}) => {
         </AContent>
       </Container>
 
-      <Container black>
-        <Things />
-      </Container>
+      <Background color="dark">
+        <Container>
+          <Things />
+        </Container>
+      </Background>
 
       <Container>
         <Experiences data={data.allMarkdownRemark.edges}/>

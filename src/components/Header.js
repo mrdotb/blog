@@ -1,43 +1,75 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import styled, { keyframes } from 'styled-components'
 
-import { scale } from '../../config/typography'
-import {Container, Content} from '../elements'
+import Logo from '../../content/assets/logo.inline.svg'
+import { Background, Container } from '../elements'
+import { OctagonAnimation } from '../components'
 
-const HContent = styled(Content)`
+const HeadBox = styled.div`
+  padding: 1rem 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 `
-const StyledLink = styled(Link)`
-  font-size: ${scale(1.5).fontSize};
-  line-height: ${scale(1.5).lineHeight};
-  ${MOBILE_MEDIA_QUERY} {
-    font-size: ${scale(2.2).fontSize};
-    line-height: ${scale(2.2).lineHeight};
+const StyledLogo = styled(Logo)`
+  width: 10rem;
+    > #text {
+      transition: fill ${props => props.theme.transition.duration} linear; 
+    }
+  &:hover {
+    > #text {
+      fill: ${props => props.theme.colors.gold};
+    }
   }
 `
+const Box = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`
+const fadeInDown =  keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`
+const AnimatedTitle = styled.h1`
+  animation: ${props => props.theme.animation.duration} ${fadeInDown} ease-in-out;
+`
+const Header = ({children}) => {
 
-const Header = ({children}) => (
-  <Container black>
-    <HContent>
-      <div>
-        <StyledLink
-          className="darklink"
-          to={'/'}
-        >
-          mrdotb
-        </StyledLink>
-      </div>
-      <div>
-        {children}
-      </div>
-    </HContent>
-  </Container>
-)
+  return (
+    <Background color="dark">
+      <Container>
+        <HeadBox>
+          <div>
+            <Link to={'/'}>
+              <StyledLogo />
+            </Link>
+          </div>
+          <div>
+            {children}
+          </div>
+        </HeadBox>
+      </Container>
+
+      <Container>
+        <Box>
+          <AnimatedTitle>Software developer</AnimatedTitle>
+          <OctagonAnimation />
+        </Box>
+      </Container>
+    </Background>
+  )
+}
 
 Header.propTypes = {
   children: PropTypes.element,
