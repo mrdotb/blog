@@ -1,23 +1,14 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
-
-//import { Background, Container } from '../elements'
 
 const Box = styled.div`
-  overflow-y: hidden;
+  width: 25rem;
+  overflow: hidden;
   height: 10rem;
-  ${MOBILE_MEDIA_QUERY} {
-    height: 4.35rem;
-  }
 `
 const StyledSvg = styled.svg`
   width: 25rem;
   height: 25rem;
-  ${MOBILE_MEDIA_QUERY} {
-    width: 10rem;
-    height: 10rem;
-  }
 `
 const rotateKeyframe = props => keyframes`
   0% {

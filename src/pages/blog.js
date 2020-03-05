@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={location}>
+      <Layout location={location} title="A mix of thoughts, tutorials, and news">
         <SEO title="Blog" />
         <Container>
           <Content>

@@ -3,19 +3,15 @@ const colors = {
     light: '#fff',
     dark: '#26282a',
   },
-  white: {
-    base: '#fff',
-    light: '#f0f0f0',
-    blueish: '#d6e1ff',
-    blue: '#a8b8e1',
-  },
+  white: '#fff',
   black: {
     base: '#26282a',
     light: '#4b4e57',
     lighter: '#696d77',
     blue: '#2e3246',
   },
-  gold: '#c29948'
+  grey: '#888888',
+  gold: '#c29948',
 }
 
 const shadow =  {
@@ -53,7 +49,7 @@ const theme = {
   layout: {
     article: '46rem',
     base: '70rem',
-    big: '83.33333rem'
+    big: '83.33333rem',
   },
   borderRadius: {
 

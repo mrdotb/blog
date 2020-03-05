@@ -16,6 +16,9 @@ const Box = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  @media only screen and (max-width:${props => props.theme.breakpoints.s}) {
+    display: none;
+  }
 `
 const Link = styled.a`
   text-decoration: underline;

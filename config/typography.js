@@ -1,5 +1,5 @@
 import Typography from 'typography'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import theme from './theme'
 //import verticalRhythm from 'compass-vertical-rhythm'
 
 const defaultFonts = [
@@ -69,7 +69,7 @@ const typography = new Typography({
     'blockquote cite:before': {
       content: '"— "',
     },
-    [MOBILE_MEDIA_QUERY]: {
+    [`@media only screen and (max-width:${theme.breakpoints.s})`]: {
       html: {
         fontSize: `${(16 / 16) * 100}%`,
       },

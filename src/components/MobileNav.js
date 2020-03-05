@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { rgba } from 'polished'
 
-import { rhythm, scale } from '../../config/typography'
 import Home from '../../content/assets/home.inline.svg'
 import About from '../../content/assets/about.inline.svg'
 import Blog from '../../content/assets/hash.inline.svg'
@@ -23,10 +22,9 @@ const Fixed = styled.div`
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(245, 245, 245, .85);
-  border-top: 1px solid #c2c2c2;
+  background-color: ${props => rgba(props.theme.colors.background.dark, 0.95)};
   display: none;
-  ${MOBILE_MEDIA_QUERY} {
+  @media only screen and (max-width:${props => props.theme.breakpoints.s}) {
     display: block;
   }
 `
@@ -34,34 +32,35 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const linkStyle = `
+const linkStyle = css`
   flex: 1;
-  padding: ${rhythm(0.3)} 0;
-  font-size: ${scale(0.1).fontSize};
-  line-height: ${scale(0.1).lineHeight};
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-transform: lowercase;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all .1s linear;
-  color: #666;
+  transition: color ${props => props.theme.transition.duration} linear;
+  color: ${props => props.theme.colors.white};
   > svg {
-    transition: fill .1s linear;
-    fill: #666;
+    transition: fill ${props => props.theme.transition.duration} linear;
+    fill: ${props => props.theme.colors.white};
+    fill: #fff;
   }
   &:hover {
-    color: #000;
+    color: ${props => props.theme.colors.gold};
     > svg {
-      fill: #000;
+      fill: ${props => props.theme.colors.gold};
     }
   }
 ${props => props.active &&
   css`
-  color: #000;
+  color: ${props => props.theme.colors.gold};
   > svg {
-    fill: #000;
+    fill: ${props => props.theme.colors.gold};
   }
   `
 }
@@ -72,7 +71,9 @@ const StyledLink = styled(Link)`
 const StyledA = styled.a`
   ${linkStyle}
 `
-const Svg = ({name, style}) => {
+const Svg = ({name}) => {
+  const style = {width: '1.3rem'}
+
   switch (name) {
   case 'Home':
     return <Home style={style} />
@@ -86,8 +87,7 @@ const Svg = ({name, style}) => {
 }
 
 Svg.propTypes = {
-  name: PropTypes.string,
-  style: PropTypes.object
+  name: PropTypes.string.isRequired,
 }
 
 const MobileNav = ({location}) => {
@@ -113,12 +113,12 @@ const MobileNav = ({location}) => {
             key={e.name}
             to={e.to}
           >
-            <Svg name={e.name} style={{width: rhythm(0.8)}} />
+            <Svg name={e.name} />
             {e.name}
           </StyledLink>
         ))}
         <StyledA href={github}>
-          <Svg name="Github" style={{width: rhythm(0.8)}} />
+          <Svg name="Github" />
           Github
         </StyledA>
       </Container>

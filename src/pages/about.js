@@ -296,7 +296,7 @@ const About = ({location}) => {
   const { author } = data.site.siteMetadata
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title="About">
       <SEO title="Resume" />
 
       <Container>

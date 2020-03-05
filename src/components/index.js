@@ -5,6 +5,7 @@ import MobileNav from './MobileNav'
 import Nav from './Nav'
 import OctagonAnimation from './OctagonAnimation'
 import Post from './Post'
+import Logo from './Logo'
 
 export {
   Bio,
@@ -13,5 +14,6 @@ export {
   MobileNav,
   Nav,
   OctagonAnimation,
-  Post
+  Post,
+  Logo,
 }

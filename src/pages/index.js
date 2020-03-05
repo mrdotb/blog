@@ -29,29 +29,22 @@ const PostsBox = styled.div`
   flex: 1 1 ${rhythm(26)};
   padding: 0 ${rhythm(0.5)};
 `
-class BlogIndex extends React.Component {
-  render() {
-    const { location, data } = this.props
-    const posts = data.allMarkdownRemark.edges
-
-    return (
-      <Layout location={location}>
-        <SEO title="Home" />
-        <Container>
-          <Box>
-            <PostsBox>
-              <h2>Blog</h2>
-              {posts.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
-            </PostsBox>
-            <BioBox>
-              <Bio />
-            </BioBox>
-          </Box>
-        </Container>
-      </Layout>
-    )
-  }
-}
+const BlogIndex = ({ location, data }) => (
+  <Layout location={location} title={'Software Developer & Problem Solver'}>
+    <SEO title="Home" />
+    <Container>
+      <Box>
+        <PostsBox>
+          <h2>Blog</h2>
+          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
+        </PostsBox>
+        <BioBox>
+          <Bio />
+        </BioBox>
+      </Box>
+    </Container>
+  </Layout>
+)
 
 BlogIndex.propTypes = {
   data: PropTypes.object,

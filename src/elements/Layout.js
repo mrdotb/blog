@@ -34,13 +34,13 @@ const SiteFooter = styled.div`
   flex: none;
 `
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, title }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <SiteContainer>
       <MobileNav location={location}/>
       <SiteHeader>
-        <Header>
+        <Header title={title}>
           <Nav location={location} />
         </Header>
       </SiteHeader>
@@ -57,6 +57,7 @@ const Layout = ({ children, location }) => (
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   location: PropTypes.object.isRequired,
+  title: PropTypes.string
 }
 
 export default Layout

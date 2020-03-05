@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { rhythm } from '../../config/typography'
 
@@ -16,7 +15,7 @@ const Box = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  ${MOBILE_MEDIA_QUERY} {
+  @media only screen and (max-width:${props => props.theme.breakpoints.s}) {
     display: none;
   }
 `
