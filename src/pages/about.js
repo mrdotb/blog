@@ -74,7 +74,7 @@ const Year = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: ${rhythm(26)};
+  max-width: 40rem;
   width: 100%;
   margin: ${rhythm(1)} 0;
   border-radius: 6px;

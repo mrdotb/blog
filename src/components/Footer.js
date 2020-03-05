@@ -10,15 +10,8 @@ import { Background, Container } from '../elements'
 import Github from '../../content/assets/github.inline.svg'
 import Linkedin from '../../content/assets/linkedin.inline.svg'
 
-//const FContainer = styled.div`
-//  display: flex;
-//  align-items: center;
-//  min-height: ${rhythm(2)};
-//  ${MOBILE_MEDIA_QUERY} {
-//    display: none;
-//  }
-//`
 const Box = styled.div`
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +22,12 @@ const Link = styled.a`
 `
 const LinkIcon = styled.a`
   padding: ${rhythm(1 / 4)};
+`
+const StyledGithub = styled(Github)`
+  width: 1.5rem;
+`
+const StyledLinkedin = styled(Linkedin)`
+  width: 1.5rem;
 `
 
 const Footer = ({children}) => {
@@ -67,10 +66,10 @@ const Footer = ({children}) => {
 
           <div>
             <LinkIcon href={github}>
-              <Github style={{width: rhythm(1)}} />
+              <StyledGithub />
             </LinkIcon>
             <LinkIcon href={linkedin}>
-              <Linkedin style={{width: rhythm(1)}} />
+              <StyledLinkedin />
             </LinkIcon>
           </div>
 
@@ -81,7 +80,7 @@ const Footer = ({children}) => {
 }
 
 Footer.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
 }
 
 export default Footer

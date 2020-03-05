@@ -43,6 +43,7 @@ const fadeInDown =  keyframes`
 `
 const AnimatedTitle = styled.h1`
   animation: ${props => props.theme.animation.duration} ${fadeInDown} ease-in-out;
+  margin: 0;
 `
 const Header = ({children}) => {
 
