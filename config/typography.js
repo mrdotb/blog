@@ -43,13 +43,6 @@ const typography = new Typography({
     'a:hover': {
       color: 'rgb(65, 105, 225)',
     },
-    'a.darklink': {
-      color: '#888888',
-      textDecoration: 'none',
-    },
-    'a.darklink:hover, a.darklink:active, a.darklink.active': {
-      color: '#c29948',
-    },
     blockquote: {
       ...scale(1 / 5),
       //color: gray(41),

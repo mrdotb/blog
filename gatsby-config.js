@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   plugins: [
-   {
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
@@ -39,7 +39,7 @@ module.exports = {
         },
       },
     },
-   {
+    {
       resolve: 'gatsby-plugin-styled-components',
       options: {},
     },
@@ -83,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        query: ``,
+        query: '',
         name: 'mrdotb blog & portolio',
         short_name: 'mrdotb blog',
         start_url: '/',
@@ -93,7 +93,7 @@ module.exports = {
         icon: 'content/assets/mrdotb-logo.png',
       },
     },
-    `gatsby-plugin-offline`,
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-typography',
@@ -102,8 +102,8 @@ module.exports = {
         omitGoogleFont: true
       },
     },
-   {
-      resolve: `gatsby-plugin-feed`,
+    {
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
           {
@@ -126,7 +126,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -150,8 +150,8 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "mrdotb blog",
+            output: '/rss.xml',
+            title: 'mrdotb blog',
           },
         ],
       },
