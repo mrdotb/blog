@@ -44,26 +44,17 @@ const linkStyle = css`
   align-items: center;
   justify-content: center;
   transition: color ${props => props.theme.transition.duration} linear;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.active ? props.theme.colors.gold : props.theme.colors.white};
   > svg {
     transition: fill ${props => props.theme.transition.duration} linear;
-    fill: ${props => props.theme.colors.white};
-    fill: #fff;
+    fill: ${props => props.active ? props.theme.colors.gold : props.theme.colors.white};
   }
-  &:hover {
+  &:hover, &:active {
     color: ${props => props.theme.colors.gold};
     > svg {
       fill: ${props => props.theme.colors.gold};
     }
   }
-${props => props.active &&
-  css`
-  color: ${props => props.theme.colors.gold};
-  > svg {
-    fill: ${props => props.theme.colors.gold};
-  }
-  `
-}
 `
 const StyledLink = styled(Link)`
   ${linkStyle}

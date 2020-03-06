@@ -20,13 +20,18 @@ const Box = styled.div`
   }
 `
 const StyledLink = styled(Link)`
+  text-decoration: none;
   padding: ${rhythm(1 / 3)};
+  color: ${props => props.active ? props.theme.colors.gold : props.theme.colors.grey};
+  &:hover, &:active {
+    color: ${props => props.theme.colors.gold};
+  }
 `
 const Nav = ({location}) => (
   <Box>
     {nav.map(e => (
       <StyledLink
-        className={location.pathname === e.to ? 'darklink active' : 'darklink'}
+        active={location.pathname === e.to ? 1 : 0}
         key={e.name}
         to={e.to}
       >

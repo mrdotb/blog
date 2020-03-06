@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
-
-import theme from '../../config/theme'
+//import { css } from 'styled-components'
+//
+//import theme from '../../config/theme'
 

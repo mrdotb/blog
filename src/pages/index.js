@@ -6,7 +6,6 @@ import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { Bio, Post } from '../components'
 import { Layout, SEO, Container } from '../elements'
-import { rhythm } from '../../config/typography'
 
 const Box = styled.div`
   display: flex;
@@ -18,24 +17,28 @@ const Box = styled.div`
     flex-wrap: wrap-reverse;
   }
 `
+const PostsBox = styled.div`
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 47rem;
+`
 const BioBox = styled.div`
-  flex: 1 1 ${rhythm(8)};
-  padding: 0 ${rhythm(0.5)};
-  ${MOBILE_MEDIA_QUERY} {
-    flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 12rem;
+  margin-left: 1rem;
+  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
+    margin-left: 0; 
   }
 `
-const PostsBox = styled.div`
-  flex: 1 1 ${rhythm(26)};
-  padding: 0 ${rhythm(0.5)};
-`
+
 const BlogIndex = ({ location, data }) => (
   <Layout location={location} title={'Software Developer & Problem Solver'}>
     <SEO title="Home" />
     <Container>
       <Box>
         <PostsBox>
-          <h2>Blog</h2>
+          <h2>Latest posts</h2>
           {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
         </PostsBox>
         <BioBox>
@@ -47,8 +50,11 @@ const BlogIndex = ({ location, data }) => (
 )
 
 BlogIndex.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
+  data: PropTypes.shape({
+    site: PropTypes.object.isRequired,
+    allMarkdownRemark: PropTypes.object.isRequired
+  }),
+  location: PropTypes.object.isRequired,
 }
 
 export default BlogIndex
