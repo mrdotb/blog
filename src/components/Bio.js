@@ -9,9 +9,9 @@ import ThailandFlag from '../../content/assets/thailand.inline.svg'
 
 const Box = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
     background-color: red;
     flex-direction: row;
@@ -24,7 +24,7 @@ const Text = styled.p`
 const StyledImage = styled(Image)`
   left: 0;
   right: 0;
-  width: 80%;
+  width: 300px;
   margin-bottom: 1rem;
 `
 const Bio = () => {
@@ -69,7 +69,7 @@ const Bio = () => {
         <br />
         I like elixir, javascript and rust.
         <br />
-        Currently living in Thailand {'  '} <ThailandFlag style={{width: rhythm(1 - 1 / 4)}}/>.
+        I currently living in Thailand {'  '} <ThailandFlag style={{width: rhythm(1 - 1 / 4)}}/>.
       </Text>
     </Box>
   )

@@ -3,6 +3,10 @@ const colors = {
     light: '#fff',
     dark: '#26282a',
   },
+  text: {
+    light: '#000',
+    dark: '#fff',
+  },
   white: '#fff',
   black: {
     base: '#26282a',

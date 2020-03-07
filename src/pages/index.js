@@ -2,50 +2,56 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 
 import { Bio, Post } from '../components'
-import { Layout, SEO, Container } from '../elements'
+import { Layout, SEO, Container, Background } from '../elements'
 
 const Box = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   padding: 3rem 0;
   flex-wrap: wrap;
-  ${MOBILE_MEDIA_QUERY} {
-    flex-wrap: wrap-reverse;
-  }
 `
-const PostsBox = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 47rem;
-`
-const BioBox = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 12rem;
-  margin-left: 1rem;
-  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
-    margin-left: 0; 
-  }
-`
+//const BioBox = styled.div`
+//  flex-grow: 1;
+//  flex-shrink: 1;
+//  flex-basis: 12rem;
+//  margin-left: 1rem;
+//  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
+//    margin-left: 0; 
+//  }
+//`
 
 const BlogIndex = ({ location, data }) => (
   <Layout location={location} title={'Software Developer & Problem Solver'}>
     <SEO title="Home" />
-    <Container>
-      <Box>
-        <PostsBox>
+    <Background color="light">
+      <Container>
+        <Box>
           <h2>Latest posts</h2>
           {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
-        </PostsBox>
-        <BioBox>
+        </Box>
+      </Container>
+    </Background>
+
+    <Background color="dark">
+      <Container>
+        <Box>
+          <h2>Projects</h2>
+          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
+        </Box>
+      </Container>
+    </Background>
+
+    <Background color="light">
+      <Container>
+        <Box>
           <Bio />
-        </BioBox>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Background>
+
   </Layout>
 )
 

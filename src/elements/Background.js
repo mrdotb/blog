@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.background[props.color]};
-  color: #fff;
+  color: ${props => props.theme.colors.text[props.color]};
 `
 
 const Background = ({children, className, color}) => (
