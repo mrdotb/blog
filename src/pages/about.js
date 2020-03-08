@@ -6,25 +6,12 @@ import groupBy from 'lodash.groupby'
 import PropTypes from 'prop-types'
 
 import { Background, Container, Layout, SEO } from '../elements'
+import { Things } from '../components'
 import { rhythm, scale } from '../../config/typography'
 
-import Ansible from '../../content/assets/ansible.inline.svg'
-import Ava from '../../content/assets/ava.inline.svg'
-import Cmd from '../../content/assets/cmd-line.inline.svg'
-import Docker from '../../content/assets/docker.inline.svg'
-import Gatsby from '../../content/assets/gatsby.inline.svg'
-import Git from '../../content/assets/git.inline.svg'
-import Graphql from '../../content/assets/graphql.inline.svg'
-import Pg from '../../content/assets/postgresql.inline.svg'
-import Pug from '../../content/assets/pug.inline.svg'
-import Phoenix from '../../content/assets/phoenix.inline.svg'
-import Reakt from '../../content/assets/react.inline.svg'
-import Redux from '../../content/assets/redux.inline.svg'
-import Ruby from '../../content/assets/ruby.inline.svg'
-import Nodejs from '../../content/assets/nodejs.inline.svg'
-import Ubuntu from '../../content/assets/ubuntu.inline.svg'
-import Vim from '../../content/assets/vim.inline.svg'
-
+const Box = styled.div`
+  padding: 3rem 0;
+`
 const AContent = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -47,9 +34,6 @@ const PictureText = styled.div`
 const TextBloc = styled.div`
   flex: 1 1 ${rhythm(22)};
   padding: 0 ${rhythm(0.5)};
-`
-const Title = styled.h1`
-  margin-bottom: ${rhythm(1)};
 `
 const Text = styled.div`
   font-size: ${scale(-1 / 5).fontSize};
@@ -138,14 +122,6 @@ const Experiences = ({data}) => {
   const groupByYear = groupBy(data, e => e.node.frontmatter.year)
   const years = Object.keys(groupByYear).sort((a, b) => b - a)
   const byOrder = (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
-  //const spanify = tag => {
-  //  const split = tag.split(' ')
-  //  if (split.length === 1) {
-  //    return tag
-  //  }
-
-  //  return `${split[0]} <span class="devicons">${split[1]}</span>`
-  //}
 
   return (
     <XpContent>
@@ -194,48 +170,6 @@ const Experiences = ({data}) => {
 
 Experiences.propTypes = {
   data: PropTypes.array,
-}
-
-const ThingsContent = styled.div`
-  display: flex;
-  padding: ${rhythm(2)} ${rhythm(0.5)}};
-  flex-direction: column;
-`
-const IconContainer = styled(Container)`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-`
-const Thing = styled.div`
-  padding: ${rhythm(0.5)}
-`
-const Things = () => {
-  const iconSize = rhythm(3)
-
-  return (
-    <ThingsContent>
-      <h2>Things I work with</h2>
-      <IconContainer>
-        <Thing><Ansible style={{width: iconSize}} /></Thing>
-        <Thing><Ava style={{width: iconSize}} /></Thing>
-        <Thing><Cmd style={{width: iconSize}}/></Thing>
-        <Thing><Docker style={{width: iconSize}}/></Thing>
-        <Thing><Gatsby style={{width: iconSize}}/></Thing>
-        <Thing><Git style={{width: iconSize}}/></Thing>
-        <Thing><Graphql style={{width: iconSize}}/></Thing>
-        <Thing><Pg style={{width: iconSize}}/></Thing>
-        <Thing><Phoenix style={{width: iconSize}}/></Thing>
-        <Thing><Pug style={{width: iconSize}}/></Thing>
-        <Thing><Reakt style={{width: iconSize}}/></Thing>
-        <Thing><Redux style={{width: iconSize}}/></Thing>
-        <Thing><Ruby style={{width: iconSize}}/></Thing>
-        <Thing><Nodejs style={{width: iconSize}}/></Thing>
-        <Thing><Ubuntu style={{width: iconSize}}/></Thing>
-        <Thing><Vim style={{width: iconSize}}/></Thing>
-      </IconContainer>
-    </ThingsContent>
-  )
 }
 
 const About = ({location}) => {
@@ -302,7 +236,6 @@ const About = ({location}) => {
       <Container>
         <AContent>
           <TextBloc>
-            <Title>About</Title>
             <Text dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           </TextBloc>
           <PictureBloc>
@@ -324,7 +257,10 @@ const About = ({location}) => {
 
       <Background color="dark">
         <Container>
-          <Things />
+          <Box>
+            <h2>Things I work with</h2>
+            <Things />
+          </Box>
         </Container>
       </Background>
 

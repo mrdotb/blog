@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Bio, Post } from '../components'
+import { Bio, Post, Card as BaseCard } from '../components'
 import { Layout, SEO, Container, Background } from '../elements'
 
 const Box = styled.div`
@@ -12,6 +12,10 @@ const Box = styled.div`
   flex-direction: column;
   padding: 3rem 0;
   flex-wrap: wrap;
+`
+const Card = styled(BaseCard)`
+  max-width: 50%;
+  color: ${props => props.theme.colors.black}
 `
 //const BioBox = styled.div`
 //  flex-grow: 1;
@@ -30,7 +34,7 @@ const BlogIndex = ({ location, data }) => (
       <Container>
         <Box>
           <h2>Latest posts</h2>
-          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
+          {data.allMarkdownRemark.edges.map(({ node }) => <Card key={node.fields.slug} shadow="dark"><Post node={node} /></Card>)}
         </Box>
       </Container>
     </Background>
@@ -39,7 +43,7 @@ const BlogIndex = ({ location, data }) => (
       <Container>
         <Box>
           <h2>Projects</h2>
-          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.fields.slug} node={node} />)}
+          {data.allMarkdownRemark.edges.map(({ node }) => <Card key={node.fields.slug} shadow="light"><Post node={node} /></Card>)}
         </Box>
       </Container>
     </Background>

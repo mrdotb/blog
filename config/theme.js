@@ -7,19 +7,18 @@ const colors = {
     light: '#000',
     dark: '#fff',
   },
-  white: '#fff',
-  black: {
-    base: '#26282a',
-    light: '#4b4e57',
-    lighter: '#696d77',
-    blue: '#2e3246',
+  shadow: {
+    light: '#fff',
+    dark: '#26282a',
   },
+  white: '#fff',
+  black: '#000',
   grey: '#888888',
   gold: '#c29948',
 }
 
 const shadow =  {
-  card: ''
+  card: '0px 5px 30px'
 }
 
 const button = {
