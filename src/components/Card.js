@@ -6,6 +6,7 @@ import { rgba } from 'polished'
 
 const CardContainer = styled.div`
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   width: 100%;
   border-radius: 6px;

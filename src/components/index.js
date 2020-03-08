@@ -1,5 +1,6 @@
 import Bio from './Bio'
 import Card from './Card'
+import Experiences from './Experiences'
 import Footer from './Footer'
 import Header from './Header'
 import Logo from './Logo'
@@ -12,6 +13,7 @@ import Things from './Things'
 export {
   Bio,
   Card,
+  Experiences,
   Footer,
   Header,
   Logo,
