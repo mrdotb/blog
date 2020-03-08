@@ -8,6 +8,7 @@ import MobileNav from './MobileNav'
 import Nav from './Nav'
 import OctagonAnimation from './OctagonAnimation'
 import Post from './Post'
+import Resume from './Resume'
 import Things from './Things'
 
 export {
@@ -21,5 +22,6 @@ export {
   Nav,
   OctagonAnimation,
   Post,
+  Resume,
   Things,
 }

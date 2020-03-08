@@ -17,15 +17,6 @@ const Card = styled(BaseCard)`
   max-width: 50%;
   color: ${props => props.theme.colors.black}
 `
-//const BioBox = styled.div`
-//  flex-grow: 1;
-//  flex-shrink: 1;
-//  flex-basis: 12rem;
-//  margin-left: 1rem;
-//  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
-//    margin-left: 0; 
-//  }
-//`
 
 const BlogIndex = ({ location, data }) => (
   <Layout location={location} title={'Software Developer & Problem Solver'}>

@@ -5,6 +5,8 @@ image: "./sense.jpg"
 imageCaption: "<i>Sense</i> at Samsung d'light, Seoul Korea"
 ---
 
+## Resume
+
 Hi, I am Baptiste Chaleil also known as mrdotb. I currently live in Chiang Mai, Thailand.
 
 I am a software developer from Paris specialized in development of web applications.
