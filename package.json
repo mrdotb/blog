@@ -64,7 +64,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "cv": "pandoc cv.md -o content/assets/cv.pdf --from markdown --template eisvogel --listings",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
