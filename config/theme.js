@@ -14,6 +14,7 @@ const colors = {
   white: '#fff',
   black: '#000',
   grey: '#888888',
+  darkGrey: '#6e6e6e',
   gold: '#c29948',
 }
 
