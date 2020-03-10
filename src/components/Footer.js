@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-//import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { rgba } from 'polished'
 
 import { rhythm } from '../../config/typography'
 import { Background, Container } from '../elements'
@@ -21,7 +21,13 @@ const Box = styled.div`
   }
 `
 const Link = styled.a`
-  text-decoration: underline;
+  color: ${props => props.theme.colors.gold};
+  box-shadow: ${props => rgba(props.theme.colors.gold, 0.35)} 0px -2px 0px inset;
+  border-bottom: 1px solid ${props => rgba(props.theme.colors.gold, 0.35)};
+  transition: ${props => props.theme.transition.duration} ease-in;
+  &:hover {
+    background: ${props => rgba(props.theme.colors.gold, 0.35)};
+  }
 `
 const LinkIcon = styled.a`
   padding: ${rhythm(1 / 4)};
@@ -59,10 +65,7 @@ const Footer = ({children}) => {
 
           <div>
             © mrdotb {new Date().getFullYear()}, Built with{' '}
-            <Link
-              className="darklink"
-              href="https://www.gatsbyjs.org"
-            >
+            <Link href="https://www.gatsbyjs.org">
               Gatsby
             </Link>
           </div>
