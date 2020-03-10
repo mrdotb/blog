@@ -1,20 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { rhythm } from '../../config/typography'
 
-const Title = styled.h3`
-  margin-bottom: ${rhythm(1 / 4)}
-`
 const Post = ({node}) => (
   <article>
     <header>
-      <Title>
+      <h3>
         <Link to={node.fields.slug}>
           {node.frontmatter.title}
         </Link>
-      </Title>
+      </h3>
       <small>{node.frontmatter.date}</small>
     </header>
     <section>
