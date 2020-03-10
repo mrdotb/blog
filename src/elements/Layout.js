@@ -7,10 +7,10 @@ import 'typeface-open-sans'
 
 import {Nav, MobileNav, Header, Footer} from '../components'
 import theme from '../../config/theme'
-import { prism } from '../styles'
+import styles from '../styles'
 
 const GlobalStyle = createGlobalStyle`
-  ${prism}
+  ${styles}
 `
 
 // Fixed footer https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css

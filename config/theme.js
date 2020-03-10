@@ -16,6 +16,7 @@ const colors = {
   grey: '#888888',
   darkGrey: '#6e6e6e',
   gold: '#c29948',
+  blue: '#1e90ff',
 }
 
 const shadow =  {

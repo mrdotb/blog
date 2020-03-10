@@ -36,12 +36,16 @@ const typography = new Typography({
       lineHeight: 1.1,
     },
     a: {
-      color: 'rgb(59, 115, 188)',
-      transition: 'color .5s',
-      textDecoration: 'underline',
+      //boxShadow: 'rgba(52, 152, 219, 0.35) 0px -2px 0px inset',
+      //borderBottom: '1px solid rgba(52, 152, 219, 0.35)',
+      //transition: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s',
+      textDecoration: 'none',
+      //color: 'rgb(59, 115, 188)',
+      //transition: 'color .5s',
+      //textDecoration: 'underline',
     },
     'a:hover': {
-      color: 'rgb(65, 105, 225)',
+      //color: 'rgb(65, 105, 225)',
     },
     blockquote: {
       ...scale(1 / 5),

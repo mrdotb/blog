@@ -2,35 +2,36 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus'
+import timeToRead from '../utils/timeToRead'
 import PropTypes from 'prop-types'
 
-import {Container, Layout, SEO} from '../elements'
-import { rhythm, scale } from '../../config/typography'
+import {Background, Container, Layout, SEO} from '../elements'
 
-const BPContent = styled('div')`
-  padding: ${rhythm(2)} ${rhythm(0.5)};
-  max-width: ${rhythm(36)};
-  width: 100%;
+const Box = styled.div`
+  padding: 3rem 0;
+  display: block;
 `
-const Title = styled.h1`
-  margin-bottom: 0;
-`
-const Date = styled.p`
-  font-size: ${scale(-1 / 5).fontSize};
-  line-height: ${scale(-1 / 5).lineHeight};
-  display: block,
-  marginBottom: ${rhythm(1)},
-`
-const Pagination = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+const Article = styled.article`
+  & > header {
+    margin-bottom: 2rem;
+    & > h1 {
+      margin-bottom: .25rem;
+    }
+    & > div {
+      color: ${props => props.theme.colors.darkGrey};
+    }
+  }
+  & > footer > nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 `
 const StyledLink = styled(Link)`
-  padding: ${rhythm(0.5)};
+  padding: 0.5;
   border: 1px solid rgb(59, 115, 188);
   text-decoration: none;
   transition: all 0.3s;
@@ -39,46 +40,46 @@ const StyledLink = styled(Link)`
     background-color: rgb(59, 115, 188);
   }
 `
-const DisqusContent = styled('div')`
-  padding: ${rhythm(2)} ${rhythm(0.5)};
-  display: block;
-`
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteUrl = this.props.data.site.siteMetadata.siteUrl
-    const pathname = this.props.location.pathname
-    const disqusConfig = {
-      url: siteUrl + pathname,
-      identifier: post.id,
-      title: post.frontmatter.title,
-    }
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = ({data, location, pageContext}) => {
+  const post = data.markdownRemark
+  const siteUrl = data.site.siteMetadata.siteUrl
+  const pathname = location.pathname
+  const disqusConfig = {
+    url: siteUrl + pathname,
+    identifier: post.id,
+    title: post.frontmatter.title,
+  }
+  const { previous, next } = pageContext
+  const categories = post.frontmatter.categories.reduce((acc, e) => `${acc} ${e},`, '').slice(0, -1)
 
-    return (
-      <Layout location={this.props.location}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
+  return (
+    <Layout location={location} title="">
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+
+      <Background color="light">
         <Container>
-          <BPContent>
-            <article>
+          <Box>
+            <Article className="article">
               <header>
-                <Title>{post.frontmatter.title}</Title>
-                <Date>{post.frontmatter.date}</Date>
+                <h1>{post.frontmatter.title}</h1>
+                <div>
+                  {`
+                  ${post.frontmatter.date} - 
+                  ${timeToRead(post.html.toString())} min read - 
+                  ${categories}
+                  `}
+                </div>
               </header>
 
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr
-                style={{
-                  marginBottom: rhythm(1),
-                }}
-              />
+
               <footer>
                 <nav>
-                  <Pagination>
+                  <ul>
                     <li>
                       {previous && (
                         <StyledLink to={previous.fields.slug} rel="prev">
@@ -93,22 +94,26 @@ class BlogPostTemplate extends React.Component {
                         </StyledLink>
                       )}
                     </li>
-                  </Pagination>
+                  </ul>
                 </nav>
               </footer>
-            </article>
-          </BPContent>
-        </Container>
 
+            </Article>
+          </Box>
+        </Container>
+      </Background>
+
+      <Background color="light">
         <Container>
-          <DisqusContent>
+          <Box>
             <Disqus config={disqusConfig} />
-          </DisqusContent>
+          </Box>
         </Container>
+      </Background>
 
-      </Layout>
-    )
-  }
+    </Layout>
+
+  )
 }
 
 BlogPostTemplate.propTypes = {
@@ -133,6 +138,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        date(formatString: "DD/MM/YYYY")
+        categories
         description
       }
     }
