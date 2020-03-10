@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import get from 'lodash.get'
 import uniq from 'lodash.uniq'
 import PropTypes from 'prop-types'
+
 import { Card as CardContainerBase } from '../components'
 
 const CardContainer = styled(CardContainerBase)`
