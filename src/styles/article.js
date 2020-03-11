@@ -3,6 +3,12 @@ import { rgba } from 'polished'
 
 const article = css`
   .article {
+    h2 {
+      margin-top: 3rem;
+    }
+    h3 {
+      margin-top: 3rem;
+    }
     a {
       color: ${props => props.theme.colors.blue};
       box-shadow: ${props => rgba(props.theme.colors.blue, 0.35)} 0px -2px 0px inset;
@@ -11,8 +17,6 @@ const article = css`
       &:hover {
         background: ${props => rgba(props.theme.colors.blue, 0.35)};
       }
-    }
-    . test {
     }
   }
 `
