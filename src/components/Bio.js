@@ -3,9 +3,24 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
 
+import { ExternalLink } from './'
+
 import { rhythm } from '../../config/typography'
-import School from '../../content/assets/school.inline.svg'
-import ThailandFlag from '../../content/assets/thailand.inline.svg'
+
+import BaseSchool from '../../content/assets/school.inline.svg'
+import BaseThailand from '../../content/assets/thailand.inline.svg'
+import BaseHearth from '../../content/assets/hearth.inline.svg'
+
+const School = styled(BaseSchool)`
+  width: 1.2rem;
+`
+const ThailandFlag = styled(BaseThailand)`
+  width: 1.2rem;
+`
+const Hearth = styled(BaseHearth)`
+  width: 1.2rem;
+  fill: ${props => props.theme.colors.red};
+`
 
 const Box = styled.div`
   display: flex;
@@ -62,14 +77,11 @@ const Bio = () => {
       />
       <Text>
         Hi, I am <strong>{author}</strong>, software developer. <br />
-        From {' '}
-        <a href="https://42.fr/">
-          <School style={{width: rhythm(1 - 1 / 4)}} /> school.
-        </a>{' '}
+        From <ExternalLink href="https://42.fr/"><School /> school.</ExternalLink>
         <br />
-        I like elixir, javascript and rust.
+        I <Hearth /> elixir and javascript.
         <br />
-        I currently living in Thailand {'  '} <ThailandFlag style={{width: rhythm(1 - 1 / 4)}}/>.
+        I currently living in Chiang Mai, <ThailandFlag />.
       </Text>
     </Box>
   )
