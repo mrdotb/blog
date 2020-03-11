@@ -1,6 +1,5 @@
 import Typography from 'typography'
 import theme from './theme'
-//import verticalRhythm from 'compass-vertical-rhythm'
 
 const defaultFonts = [
   '-apple-system',
