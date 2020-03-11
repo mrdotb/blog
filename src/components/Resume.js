@@ -12,6 +12,9 @@ const Text = styled.div`
   max-width: 43rem;
   width: 100%;
   @media only screen and (max-width:${props => props.theme.breakpoints.l}) {
+    max-width: 28rem;
+  }
+  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
     max-width: none;
   }
 `
@@ -20,7 +23,7 @@ const Picture = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width:${props => props.theme.breakpoints.l}) {
+  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
     width: 100%;
   }
 `

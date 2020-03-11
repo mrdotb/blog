@@ -22,7 +22,7 @@ const BlogIndex = ({ location, data }) => (
       <Container>
         <Box>
           <h2>Latest posts</h2>
-          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.id} node={node} />)}
+          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.frontmatter.title} node={node} />)}
         </Box>
       </Container>
     </Background>
