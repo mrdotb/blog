@@ -40,6 +40,7 @@ const StyledImage = styled(Image)`
   right: 0;
   width: 300px;
   margin-bottom: 1rem;
+  margin-right: 1rem;
 `
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -76,11 +77,11 @@ const Bio = () => {
       />
       <Text>
         Hi, I am <strong>{author}</strong>, software developer. <br />
-        From <ExternalLink href="https://42.fr/"><School /> school.</ExternalLink>
+        I learned a lot at <ExternalLink href="https://42.fr/"><School /> school.</ExternalLink>
         <br />
-        I <Hearth /> elixir and javascript.
+        Currently I <Hearth /> elixir and rust.
         <br />
-        I currently living in Chiang Mai, <ThailandFlag />.
+        I live in Chiang Mai, <ThailandFlag />.
       </Text>
     </Box>
   )

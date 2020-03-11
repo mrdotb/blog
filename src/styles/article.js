@@ -3,10 +3,7 @@ import { rgba } from 'polished'
 
 const article = css`
   .article {
-    h2 {
-      margin-top: 3rem;
-    }
-    h3 {
+    h2, h3 {
       margin-top: 3rem;
     }
     a {

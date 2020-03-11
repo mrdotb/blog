@@ -36,7 +36,7 @@ const StyledImage = styled(Image)`
   }
 `
 const Resume = ({data}) => (
-  <Box>
+  <Box className="outer-link">
     <Text dangerouslySetInnerHTML={{ __html: data.html }} />
     <Picture>
       <StyledImage

@@ -30,7 +30,7 @@ const BlogIndex = ({ location, data }) => (
     <Background color="dark">
       <Container>
         <Box>
-          <h2>Project</h2>
+          <h2>Projects</h2>
           Coming soon ...
         </Box>
       </Container>

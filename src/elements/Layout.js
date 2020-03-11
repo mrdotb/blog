@@ -46,7 +46,7 @@ const Layout = ({ children, location, title }) => (
           <Nav location={location} />
         </Header>
       </SiteHeader>
-      <SiteContent>{children}</SiteContent>
+      <SiteContent className="site-content">{children}</SiteContent>
       <SiteFooter>
         <Footer>
           <Nav location={location} />

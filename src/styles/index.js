@@ -1,10 +1,10 @@
 import { css } from 'styled-components'
 
-import article from './article'
+import typography from './typography'
 import prism from './prism'
 
 const styles = css`
-  ${article}
+  ${typography}
   ${prism}
 `
 

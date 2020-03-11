@@ -11,7 +11,7 @@ const Box = styled.div`
 `
 
 const About = ({location, data}) => (
-  <Layout location={location} title="About">
+  <Layout location={location} title="Who am I ?">
     <SEO title="Resume" />
 
     <Background color="light">
