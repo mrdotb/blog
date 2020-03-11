@@ -1,12 +1,12 @@
 ---	
 title: Openvpn Client On Server
 date: "2020-03-01T12:37:19.357Z"	
-description: "Connecting VPN as client from a server without loosing the ssh / vnc connexion"
+description: "Connecting VPN as client from a server without losing the ssh / vnc connection"
 categories:
   - "tutorial"
   - "network"
 ---
-How to connect to your VPN from your server without loosing the ssh / vnc connexion ?
+How to connect to your VPN from your server without losing the ssh / vnc connection ?
 
 If you are not interested in the explanation, go the to the [final script](#final-script).
 
@@ -29,7 +29,7 @@ A little diagram about what we want to achieve with my current setup and IPs to 
 ```shell
 [mrdotb@server] export our_ip="49.237.14.154"
 ```
-+ Why are we loosing access ? 
++ Why are we losing access ? 
 ```shell
 [mrdotb@server] ip route show table main
 default via 10.140.0.1 dev ens4 proto dhcp src 10.140.0.14 metric 100
@@ -54,7 +54,7 @@ Notice, when you start openvpn it make change to the main [routing table](https:
 ```shell
 [mrdotb@server] timeout 30 /usr/sbin/openvpn yourvpnconfig.ovpn
 ```
-If the shell become unresponsive or you are unable to open a second ssh connexion something is wrong, but it's find you will get access back after the 30 sec timeout. Otherwise, congrats ! You are succesfully connected to your openvpn without loosing your network access.
+If the shell become unresponsive or you are unable to open a second ssh connection something is wrong, but it's fine you will get access back after the 30 sec timeout. Otherwise, congrats ! You are succesfully connected to your openvpn without losing your network access.
 + I can't resolve domains anymore ?
 ```shell
 [mrdotb@server] sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
@@ -69,8 +69,6 @@ Your openvpn server push some bad routes preventing you to use your local host r
 ```
 You can also reboot the server.
 
-
-
 <h3 id="final-script">Final script</h3>
 
 ```shell
@@ -84,8 +82,6 @@ sudo ip rule add from $your_ip 22
 sudo ip rule add to $your_ip 22
 timeout 30 sudo /usr/sbin/openvpn yourvpnconfig.ovpn
 ```
-
-
 
 ### Resources
 If you want to learn more about linux networks, read [linux-ip](http://linux-ip.net/html/index.html).
