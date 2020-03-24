@@ -27,7 +27,7 @@ Like you, I got this problem and I was unable to solve it with satisfaction. The
 <div id="diagram">
 
 *A little diagram about what we want to achieve with my current setup and IPs to make it easy for you to follow.*
-![schema network config mrdotb](./schema.svg)
+![schema network config mrdotb](./openvpn-client-on-server/schema.svg)
 
 </div>
 
