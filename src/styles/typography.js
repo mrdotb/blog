@@ -15,7 +15,23 @@ const typography = css`
   }
   .article {
     h2, h3 {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    #contents li {
+      margin: 0;
+    }
+    li {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
     a {
       color: ${props => props.theme.colors.blue};
