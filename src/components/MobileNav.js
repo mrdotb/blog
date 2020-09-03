@@ -7,7 +7,8 @@ import { rgba } from 'polished'
 import Home from '../../content/assets/home.inline.svg'
 import About from '../../content/assets/about.inline.svg'
 import Blog from '../../content/assets/hash.inline.svg'
-import Github from '../../content/assets/github.inline.svg'
+// import Github from '../../content/assets/github.inline.svg'
+import Mail from '../../content/assets/mail.inline.svg'
 
 const nav = [
   { name: 'Home', to: '/'},
@@ -72,8 +73,8 @@ const Svg = ({name}) => {
     return <About style={style} />
   case 'Blog':
     return <Blog style={style} />
-  case 'Github':
-    return <Github style={style} />
+  case 'Mail':
+    return <Mail style={{width: '1.7rem'}} />
   }
 }
 
@@ -109,8 +110,8 @@ const MobileNav = ({location}) => {
           </StyledLink>
         ))}
         <StyledA href={github}>
-          <Svg name="Github" />
-          Github
+          <Svg name="Mail" />
+          Contact
         </StyledA>
       </Container>
     </Fixed>

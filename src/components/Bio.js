@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
@@ -81,10 +82,11 @@ const Bio = () => {
       <Text>
         Hi, I&apos;m Baptiste Chaleil aka <strong>mrdotb</strong>, freelance web developer based in Paris, France.
         <br />
-        I learnt computer programming at <ExternalLink href="https://42.fr/"><School /> school</ExternalLink> and now love <Hearth /> working with elixir and nodejs.
+        I learnt computer programming at <ExternalLink href="https://42.fr/"><School /> school</ExternalLink> and now <Hearth /> working with elixir and nodejs.
         <br />
         Drop me a line or two if you got an exciting project that needs an experienced developer.
         <br />
+        Learn more, check out my <Link to="/about">resume</Link>.
         {/* I live in Chiang Mai, <ThailandFlag />. */}
       </Text>
     </Box>

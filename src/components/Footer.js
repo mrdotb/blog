@@ -29,6 +29,11 @@ const StyledGithub = styled(Github)`
 const StyledLinkedin = styled(Linkedin)`
   width: 1.5rem;
 `
+const HideOnS = styled.div`
+  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
+    display: none;
+  }
+`
 
 const Footer = ({children}) => {
   const data = useStaticQuery(graphql`
@@ -50,9 +55,9 @@ const Footer = ({children}) => {
     <Background color="dark">
       <Container>
         <Box>
-          <div>
+          <HideOnS>
             {children}
-          </div>
+          </HideOnS>
 
           <div>
             © mrdotb {new Date().getFullYear()}, Built with{' '}

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Mail from '../../content/assets/mail.inline.svg'
+import mailTo from '../utils/mailTo'
 
 const Container = styled.div`
   display: flex;
@@ -20,22 +21,23 @@ const Button = styled.div`
   font-weight: bold;
 `
 
-function mailTo() {
-  let location = 'mailto:'
-  let mail = 'lqcnsa?oqnsnml`hk-bnl'
-  for (let i = 0; i < mail.length; i++) {
-    location += String.fromCharCode(mail.charCodeAt(i) + 1)
-  }
-  window.location.href = location
-}
+const Text = styled.span`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #E2E8F0;
+`
 
 const Contact = () => {
   return (
     <Container>
-      <Button onClick={mailTo}>
-        <Mail style={{width: '2rem', marginRight: '0.5rem'}}/>
-        mrdotb (at) protonmail.com
-      </Button>
+      <div>
+        <Text>Want to hire me ?</Text>
+        <Button onClick={mailTo}>
+          <Mail style={{width: '2rem', marginRight: '0.5rem'}}/>
+          mrdotb (at) protonmail.com
+        </Button>
+      </div>
     </Container>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import mailTo from '../utils/mailTo'
 
 import { rhythm } from '../../config/typography'
 
@@ -38,6 +39,12 @@ const Nav = ({location}) => (
         {e.name}
       </StyledLink>
     ))}
+    <StyledLink onClick={
+      e => {
+        e.preventDefault()
+        mailTo()
+      }
+    }>Contact</StyledLink>
   </Box>
 )
 
