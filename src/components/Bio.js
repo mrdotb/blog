@@ -28,7 +28,7 @@ const Box = styled.div`
   align-items: center;
   justify-content: space-around;
   @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     margin-bottom: ${rhythm(1)};
   }
