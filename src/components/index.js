@@ -1,5 +1,6 @@
 import Bio from './Bio'
 import Card from './Card'
+import Contact from './Contact'
 import Experiences from './Experiences'
 import ExternalLink from './ExternalLink'
 import Footer from './Footer'
@@ -15,6 +16,7 @@ import Things from './Things'
 export {
   Bio,
   Card,
+  Contact,
   Experiences,
   ExternalLink,
   Footer,

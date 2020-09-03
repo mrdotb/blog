@@ -20,8 +20,8 @@ categories:
 
 ## Intro
 
-How can I connect my vps / server as client to a Open VPN server without losing my actual ssh / vnc connection ?<br>
-Like you, I got this problem and I was unable to solve it with satisfaction. The answers I found around the internet didn't provide enought explanations. I used this as an occasion to learn more about linux, network and share with you the solution I found the most effective and simple.
+How could one connect a vps or a server as client to a OpenVPN server without losing my actual ssh / vnc connection ?<br>
+As you surely encoutered this problem yourself too, I was in the same boat myself and was unable to solve it with satisfaction. The answers I found around the internet didn't provide enought explanations. I used this as an occasion to learn more about linux, network and share with you the most effective yet simple solution.
 
 
 <div id="diagram">
@@ -84,7 +84,7 @@ If the shell become unresponsive or you are unable to open a second ssh connecti
 [mrdotb@server] sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 [mrdotb@server] sudo echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 ```
-Your openvpn server push some bad routes preventing you to use your local host resolver. Using google DNS is the easiest way to solve the problem.
+Your openvpn server pushes some bad routes preventing you to use your local host resolver. Using google DNS is the easiest way to solve the problem.
 
 8. How can you reset all the previous modifications ?
 ```shell

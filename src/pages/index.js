@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Bio, Post } from '../components'
+import { Bio, Post, Contact } from '../components'
 import { Layout, SEO, Container, Background } from '../elements'
 
 const Box = styled.div`
@@ -21,8 +21,7 @@ const BlogIndex = ({ location, data }) => (
     <Background color="light">
       <Container>
         <Box>
-          <h2>Latest posts</h2>
-          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.frontmatter.title} node={node} />)}
+          <Bio />
         </Box>
       </Container>
     </Background>
@@ -30,18 +29,17 @@ const BlogIndex = ({ location, data }) => (
     <Background color="dark">
       <Container>
         <Box>
-          <h2>Projects</h2>
-          Coming soon ...
+          <Contact />
         </Box>
       </Container>
     </Background>
 
 
-
     <Background color="light">
       <Container>
         <Box>
-          <Bio />
+          <h2>My Latest Posts</h2>
+          {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.frontmatter.title} node={node} />)}
         </Box>
       </Container>
     </Background>

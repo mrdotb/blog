@@ -18,15 +18,15 @@ categories:
 
 ## Intro
 
-It's been 5 years since I started to use [vim](https://www.vim.org/) and now [neovim](https://neovim.io/) as my goto text editor. Along The road I started to work on big projects. I tried many plugins and tinker my vimrc a lot. Today I fell very comfy. So I decided to share.
+5 years ago was my first day using [vim](https://www.vim.org/). Things haven't changed much as I now use [neovim](https://neovim.io/) as my goto text editor. As soon as projects got bigger, I did start to experiment with numerous plugins and tinkered a lot with my vimrc. Today, as I feel pretty comfy, I decided to share this with you.
 
 <div id="plugins">
 
 ## My must have plugins
 
-+ [fzf](https://github.com/junegunn/fzf.vim) probably the most usefull plugin in my eyes. With this you can navigate painlessly around buffers, tabs, windows... So usefull for big project.
++ [fzf](https://github.com/junegunn/fzf.vim) probably the most usefull plugin in my opinion. This plugin allow you to navigate painlessly around buffers, tabs, windows... It's so usefull for big project.
 + [vim-polyglot](https://github.com/sheerun/vim-polyglot) handle all the mainstream languages.
-+ [vim-vinegar](https://github.com/tpope/vim-vinegar) I started with NERDtree before moving to netrw (vim default file explorer). This plugin make netrw better.
++ [vim-vinegar](https://github.com/tpope/vim-vinegar) I started with NERDtree before moving to netrw (vim default file explorer). This plugin makes netrw better.
 + [vim-fugitive](https://github.com/tpope/vim-fugitive) Awesome wrapper for git inside vim.
 
 </div>

@@ -18,7 +18,7 @@ const School = styled(BaseSchool)`
 //   width: 1.2rem;
 // `
 const Hearth = styled(BaseHearth)`
-  width: 1.2rem;
+  width: 1rem;
   fill: ${props => props.theme.colors.red};
 `
 
@@ -76,11 +76,12 @@ const Bio = () => {
         }}
       />
       <Text>
-        Hi, I am <strong>{author}</strong>, a freelance web developer. <br />
-        I attended <ExternalLink href="https://42.fr/"><School /> school</ExternalLink> a computer programming school.
+        Hi, I&apos;m Baptiste Chaleil aka <strong>mrdotb</strong>, freelance web developer based in Paris, France.
         <br />
-        Currently I <Hearth /> working with elixir and node.js.
-        {/* <br /> */}
+        I learnt computer programming at <ExternalLink href="https://42.fr/"><School /> school</ExternalLink> and now love <Hearth /> working with elixir and nodejs.
+        <br />
+        Drop me a line or two if you got an exciting project that needs an experienced developer.
+        <br />
         {/* I live in Chiang Mai, <ThailandFlag />. */}
       </Text>
     </Box>
