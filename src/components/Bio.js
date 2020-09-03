@@ -41,6 +41,9 @@ const StyledImage = styled(Image)`
   width: 300px;
   margin-bottom: 1rem;
   margin-right: 1rem;
+  @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
+    width: 200px;
+  }
 `
 const Bio = () => {
   const data = useStaticQuery(graphql`
