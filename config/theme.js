@@ -1,18 +1,18 @@
 const colors = {
   background: {
-    light: '#fff',
+    light: '#F7FAFC',
     dark: '#26282a',
   },
   text: {
-    light: '#000',
-    dark: '#fff',
+    light: '#26282a',
+    dark: '#F7FAFC',
   },
   shadow: {
     light: '#fff',
     dark: '#26282a',
   },
-  white: '#fff',
-  black: '#000',
+  white: '#26282a',
+  black: '#26282a',
   grey: '#888888',
   darkGrey: '#6e6e6e',
   gold: '#c29948',

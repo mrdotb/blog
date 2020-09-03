@@ -8,15 +8,15 @@ import { ExternalLink } from './'
 import { rhythm } from '../../config/typography'
 
 import BaseSchool from '../../content/assets/school.inline.svg'
-import BaseThailand from '../../content/assets/thailand.inline.svg'
+// import BaseThailand from '../../content/assets/thailand.inline.svg'
 import BaseHearth from '../../content/assets/hearth.inline.svg'
 
 const School = styled(BaseSchool)`
   width: 1.2rem;
 `
-const ThailandFlag = styled(BaseThailand)`
-  width: 1.2rem;
-`
+// const ThailandFlag = styled(BaseThailand)`
+//   width: 1.2rem;
+// `
 const Hearth = styled(BaseHearth)`
   width: 1.2rem;
   fill: ${props => props.theme.colors.red};
@@ -76,12 +76,12 @@ const Bio = () => {
         }}
       />
       <Text>
-        Hi, I am <strong>{author}</strong>, software developer. <br />
-        I learned a lot at <ExternalLink href="https://42.fr/"><School /> school.</ExternalLink>
+        Hi, I am <strong>{author}</strong>, a freelance web developer. <br />
+        I attended <ExternalLink href="https://42.fr/"><School /> school</ExternalLink> a computer programming school.
         <br />
-        Currently I <Hearth /> elixir and rust.
-        <br />
-        I live in Chiang Mai, <ThailandFlag />.
+        Currently I <Hearth /> working with elixir and node.js.
+        {/* <br /> */}
+        {/* I live in Chiang Mai, <ThailandFlag />. */}
       </Text>
     </Box>
   )

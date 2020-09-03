@@ -32,7 +32,6 @@ const Article = styled.article`
 `
 const StyledLink = styled(Link)`
   padding: 0.5;
-  border: 1px solid rgb(59, 115, 188);
   text-decoration: none;
   transition: all 0.3s;
   &:hover {

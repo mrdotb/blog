@@ -15,7 +15,7 @@ const Box = styled.div`
 `
 
 const BlogIndex = ({ location, data }) => (
-  <Layout location={location} title={'Software Developer & Problem Solver'}>
+  <Layout location={location} title={'Freelance Web Developer'}>
     <SEO title="Home" />
 
     <Background color="light">
