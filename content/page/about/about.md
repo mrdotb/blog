@@ -15,4 +15,4 @@ When I am not working I like to travel around the world or tinker my [~dotfiles]
 
 I maintain some open-source projects on [github](https://github.com/mrdotb/) and answers questions occasionally on [stack overflow](https://stackoverflow.com/users/3343266/mrdotb). 
 
-My linux distributions of choice is [Arch Linux](https://www.archlinux.org/) on my desktop computer and [Xubuntu](https://xubuntu.org/) on my laptop, both with the [i3](https://i3wm.org/) window manager.
+My linux distributions of choice are [Arch Linux](https://www.archlinux.org/) for my development environment and [ubuntu](https://ubuntu.com/) for my servers.
