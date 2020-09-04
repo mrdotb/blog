@@ -14,6 +14,12 @@ const Box = styled.div`
   flex-wrap: wrap;
 `
 
+const Spacer = styled.div`
+  @media only screen and (max-width:${props => props.theme.breakpoints.s}) {
+    margin-bottom: 2rem;
+  }
+`
+
 const BlogIndex = ({ location, data }) => (
   <Layout location={location} title={'Freelance Web Developer'}>
     <SEO title="Home" />
@@ -40,6 +46,7 @@ const BlogIndex = ({ location, data }) => (
         <Box>
           <h2>My Latest Posts</h2>
           {data.allMarkdownRemark.edges.map(({ node }) => <Post key={node.frontmatter.title} node={node} />)}
+          <Spacer />
         </Box>
       </Container>
     </Background>

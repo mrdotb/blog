@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 import { ExternalLink } from './'
 
-import { rhythm } from '../../config/typography'
+// import { rhythm } from '../../config/typography'
 
 import BaseSchool from '../../content/assets/school.inline.svg'
 // import BaseThailand from '../../content/assets/thailand.inline.svg'
@@ -31,7 +31,6 @@ const Box = styled.div`
   @media only screen and (max-width:${props => props.theme.breakpoints.m}) {
     flex-direction: column;
     justify-content: space-around;
-    margin-bottom: ${rhythm(1)};
   }
 `
 const Text = styled.p`

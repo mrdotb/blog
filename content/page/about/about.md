@@ -11,6 +11,8 @@ Hi, I am Baptiste Chaleil also known as mrdotb. I live in Paris, France.
 
 I am a software developer specialized in development of web applications. I love to develop. I care about UX, responsiveness, performance, maintainability and scalability.
 
-When I am not working I like to travel around the world and tinker my [~dotfiles](https://github.com/mrdotb/dotfiles).
+When I am not working I like to travel around the world or tinker my [~dotfiles](https://github.com/mrdotb/dotfiles).
 
-I run [Arch Linux](https://www.archlinux.org/) on my desktop computer and [Xubuntu](https://xubuntu.org/) on my laptop, both with the [i3](https://i3wm.org/) window manager.
+I maintain some open-source projects on [github](https://github.com/mrdotb/) and answers questions occasionally on [stack overflow](https://stackoverflow.com/users/3343266/mrdotb). 
+
+My linux distributions of choice is [Arch Linux](https://www.archlinux.org/) on my desktop computer and [Xubuntu](https://xubuntu.org/) on my laptop, both with the [i3](https://i3wm.org/) window manager.

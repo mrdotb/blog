@@ -26,13 +26,14 @@ const Text = styled.span`
   justify-content: center;
   margin-bottom: 1rem;
   color: #E2E8F0;
+  font-weight: bold;
 `
 
 const Contact = () => {
   return (
     <Container>
       <div>
-        <Text>Want to hire me ?</Text>
+        <Text>Want to hire me?</Text>
         <Button onClick={mailTo}>
           <Mail style={{width: '2rem', marginRight: '0.5rem'}}/>
           mrdotb (at) protonmail.com

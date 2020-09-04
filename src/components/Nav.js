@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import mailTo from '../utils/mailTo'
 
 import { rhythm } from '../../config/typography'
@@ -20,13 +20,19 @@ const Box = styled.div`
     display: none;
   }
 `
-const StyledLink = styled(Link)`
+const linkStyle = css`
   text-decoration: none;
   padding: ${rhythm(1 / 3)};
   color: ${props => props.active ? props.theme.colors.gold : props.theme.colors.grey};
   &:hover, &:active {
     color: ${props => props.theme.colors.gold};
   }
+`
+const StyledLink = styled(Link)`
+  ${linkStyle}
+`
+const StyledA = styled.a`
+  ${linkStyle}
 `
 const Nav = ({location}) => (
   <Box>
@@ -39,12 +45,12 @@ const Nav = ({location}) => (
         {e.name}
       </StyledLink>
     ))}
-    <StyledLink onClick={
+    <StyledA onClick={
       e => {
         e.preventDefault()
         mailTo()
       }
-    }>Contact</StyledLink>
+    }>Contact</StyledA>
   </Box>
 )
 

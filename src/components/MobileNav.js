@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 import { rgba } from 'polished'
+import mailTo from '../utils/mailTo'
 
 import Home from '../../content/assets/home.inline.svg'
 import About from '../../content/assets/about.inline.svg'
@@ -74,7 +75,7 @@ const Svg = ({name}) => {
   case 'Blog':
     return <Blog style={style} />
   case 'Mail':
-    return <Mail style={{width: '1.7rem'}} />
+    return <Mail style={style} />
   }
 }
 
@@ -83,19 +84,6 @@ Svg.propTypes = {
 }
 
 const MobileNav = ({location}) => {
-  const data = useStaticQuery(graphql`
-    query GithubQuery {
-      site {
-        siteMetadata {
-          social {
-            github
-          }
-        }
-      }
-    }
-  `)
-  const { github } = data.site.siteMetadata.social
-
   return (
     <Fixed>
       <Container>
@@ -109,7 +97,12 @@ const MobileNav = ({location}) => {
             {e.name}
           </StyledLink>
         ))}
-        <StyledA href={github}>
+        <StyledA onClick={
+          e => {
+            e.preventDefault()
+            mailTo()
+          }
+        }>
           <Svg name="Mail" />
           Contact
         </StyledA>

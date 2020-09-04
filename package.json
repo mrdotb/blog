@@ -61,8 +61,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
-    "format": "eslint --fix \"**/*.js\"",
-    "lint": "eslint \"**/*.js\"",
+    "format": "eslint --fix \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
